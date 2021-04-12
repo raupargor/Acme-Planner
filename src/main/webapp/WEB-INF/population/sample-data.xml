@@ -33,9 +33,15 @@
 		<property name="info" value="http://www.example.org"/>
 	</bean>
 	<bean id="shout03" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/09/07 00:00"/>
+		<property name="moment" value="2021/04/07 00:00"/>
 		<property name="author" value="Foo Bar"/>
 		<property name="text" value="Just turning 50!"/>
 		<property name="info" value="https://conpdeparty.com/617-large_default/globo-foil-happy-birthday-rosa-oro.jpg"/>
+	</bean>
+	<bean id="shout04" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/04/06 00:00"/>
+		<property name="author" value="Michael Jackson"/>
+		<property name="text" value="Thriller!!"/>
+		<property name="info"> <null/></property>
 	</bean>
 </beans>
