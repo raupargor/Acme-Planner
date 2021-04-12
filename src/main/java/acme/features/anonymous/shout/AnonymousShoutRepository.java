@@ -24,7 +24,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousShoutRepository extends AbstractRepository {
 
-	@Query(value = "SELECT * FROM SHOUT WHERE MOMENT >= ?1 GROUP BY MOMENT", nativeQuery = true)
+	@Query(value = "SELECT * FROM SHOUT WHERE MOMENT >= ?1 ORDER BY MOMENT ASC", nativeQuery = true)
 	Collection<Shout> findLessThanAMonth(LocalDate time);
 
 }
