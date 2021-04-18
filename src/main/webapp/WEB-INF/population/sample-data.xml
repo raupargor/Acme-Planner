@@ -44,4 +44,55 @@
 		<property name="text" value="Thriller!!"/>
 		<property name="info"> <null/></property>
 	</bean>
+	
+	<!-- Tasks-->
+	<bean id="task01" class="acme.entities.tasks.Task">
+		<property name="title" value="Create the entity Task for level C"/>
+		<property name="startMoment" value="2021/04/19 00:00"/>
+		<property name="endMoment" value="2021/04/20 18:00"/>
+		<property name="description" value="The entity Task must include: a title, an execution period, a description,and an optional link."/>
+		<property name="workload" value="1.5"/>
+		<property name="status" value="PUBLIC"/>
+		<property name="link"> <null/></property>
+	</bean>
+	<bean id="task02" class="acme.entities.tasks.Task">
+		<property name="title" value="List public tasks that are non-finished for level C"/>
+		<property name="startMoment" value="2021/04/20 18:30"/>
+		<property name="endMoment" value="2021/04/22 10:00"/>
+		<property name="description" value="List the public tasks that are non-finished (sorted by execution 
+		period or work-load). Show the details of any public tasks that are non-finished."/>
+		<property name="workload" value="2.5"/>
+		<property name="status" value="PUBLIC"/>
+		<property name="link"> <null/></property>
+	</bean>
+	<bean id="task03" class="acme.entities.tasks.Task">
+		<property name="title" value="List public tasks finished for level C"/>
+		<property name="startMoment" value="2021/04/20 18:30"/>
+		<property name="endMoment" value="2021/04/22 10:00"/>
+		<property name="description" value="List the public tasks that are finished (sorted by execution period or workload)."/>
+		<property name="workload" value="2.5"/>
+		<property name="status" value="PRIVATE"/>
+		<property name="link"> <null/></property>
+	</bean>
+	<bean id="task04" class="acme.entities.tasks.Task">
+		<property name="title" value="Show the details for level C"/>
+		<property name="startMoment" value="2021/04/19 00:00"/>
+		<property name="endMoment" value="2021/04/30 10:00"/>
+		<property name="description" value="An authenticated principal must be able to: Show the details of the public tasks that are finished"/>
+		<property name="workload" value="2.5"/>
+		<property name="status" value="PRIVATE"/>
+		<property name="link"> <null/></property>
+	</bean>
+	<bean id="task05" class="acme.entities.tasks.Task">
+		<property name="title" value="Create a dashboard for level C"/>
+		<property name="startMoment" value="2021/04/23 00:00"/>
+		<property name="endMoment" value="2021/04/30 17:00"/>
+		<property name="description" value="Information: num of task public/priv, num of finished/not finished task, etc"/>
+		<property name="workload" value="3.8"/>
+		<property name="status" value="PRIVATE"/>
+		<property name="link"> <null/></property>
+	</bean>
+	
+
+
 </beans>
