@@ -37,6 +37,7 @@ master.menu.anonymous.favourite-link-servando = Figueroa's Favourite link
 master.menu.anonymous.favourite-link-maria = García's Favourite link
 master.menu.anonymous.listShout = List shouts
 master.menu.anonymous.createShout = Shout!
+master.menu.anonymous.listTask = List tasks
 
 
 # master.menu.administrator ###################################################

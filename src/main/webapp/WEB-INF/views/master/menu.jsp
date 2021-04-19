@@ -28,6 +28,8 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.listShout" action="/anonymous/shout/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.createShout" action="/anonymous/shout/create"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.anonymous.listTask" action="/anonymous/task/list"/>
 		</acme:menu-option>
 		
 
