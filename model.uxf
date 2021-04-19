@@ -327,9 +327,9 @@ Shout
 Task
 --
 + title: String {NotEmpty, Length(max = 80)}
-+ startPeriod: LocalDateTime {}
-+ finalPeriod: LocalDateTime {}
-+ workload: Double {}
++ startMoment: LocalDateTime {NotNull, Temporal{TIMESTAMP}}
++ endMoment: LocalDateTime {NotNull, Temporal{TIMESTAMP}}
++ workload: Double {NotNull}
 + description: String {NotEmpty, Length(max = 500)}
 + link: String {URL}
 + public: Boolean {}</panel_attributes>
