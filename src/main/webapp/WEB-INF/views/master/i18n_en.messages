@@ -16,7 +16,7 @@ master.banner.background = #5CE1E6
 
 master.welcome.title = Welcome!
 master.welcome.text = \
-	Welcome to Acme One! Your first project in D&T
+	Welcome to Acme Planner! Your second project in D&T
 
 # master.menu #################################################################
 
@@ -37,6 +37,7 @@ master.menu.anonymous.favourite-link-servando = Figueroa's Favourite link
 master.menu.anonymous.favourite-link-maria = García's Favourite link
 master.menu.anonymous.listShout = List shouts
 master.menu.anonymous.createShout = Shout!
+master.menu.anonymous.listTask = List tasks
 
 
 # master.menu.administrator ###################################################
