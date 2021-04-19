@@ -12,6 +12,7 @@
 
 package acme.features.anonymous.shout;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
@@ -23,7 +24,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousShoutRepository extends AbstractRepository {
 
-	@Query("select s from Shout s")
-	Collection<Shout> findMany();
+	@Query(value = "SELECT * FROM SHOUT WHERE MOMENT >= ?1 ORDER BY MOMENT ASC", nativeQuery = true)
+	Collection<Shout> findLessThanAMonth(LocalDate time);
 
 }

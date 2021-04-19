@@ -11,7 +11,7 @@
 anonymous.shout.form.label.author = Autor:
 anonymous.shout.form.label.text = Texto:
 anonymous.shout.form.label.info = Info:
-anonymous.shout.form.button.create = Gritar
+anonymous.shout.form.button.create = ¡Gritar!
 anonymous.shout.form.button.return = Volver
 
 anonymous.shout.list.label.moment = Momento
