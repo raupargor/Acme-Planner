@@ -22,23 +22,27 @@ public class SpamService {
 			spamWords.add(todoSpam.get(j).getSpamWords());
 		}	
 		
-		final String textoConFormato ="." +text.toLowerCase().replace(":", ".").replace(" ", ".").replace(";", ".")
+		final String textoConFormato ="."+text.toLowerCase().replace(":", ".").replace(" ", ".").replace(";", ".")
 			.replace(",", ".").replace("(", ".").replace(")", ".").replace("-", ".").replace("_", ".")
 			.replace(">", ".").replace("<", ".").replace("¡", ".").replace("?", ".").replace("¿", ".")
-			.replace("!", ".").replace("}", ".").replace("{", ".").replace("*", ".").replace("+", ".")
-			.replace("·", ".").replace("$", ".").replace("/", ".").replace("%", ".")+".";
+			.replace("!", ".").replace("}", ".").replace("{", ".").replace("*", ".").replace("+", ".")+".";
 		
 		final String[] textoCortado= textoConFormato.split(".");
-		Integer procentajeSpamDetectado=0;
-		final Integer tamanoTexto=textoCortado.length;
+		Integer procentajeSpamDetectado = 0;
+		final Integer tamanoTexto=textoCortado.length+1;
 
-		for(int i=0; i<tamanoTexto; i++) {
-			final String palabra = textoCortado[i];
-			if(spamWords.contains(palabra)){
-				procentajeSpamDetectado=procentajeSpamDetectado+(100/tamanoTexto);
+		for(int i=0; i<spamWords.size(); i++) {
+			final String palabra = spamWords.get(i);
+			if(text.contains(palabra)){
+				procentajeSpamDetectado=procentajeSpamDetectado+(100/tamanoTexto-1);
 			}
 		}
-		return umbralMaximo<=procentajeSpamDetectado;
+		if(umbralMaximo<procentajeSpamDetectado) {
+			return true;
+		}else {
+			return false ;	
+		}
+		
 	}
 
 }
