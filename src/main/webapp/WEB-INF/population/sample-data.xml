@@ -38,6 +38,7 @@
 		<property name="text" value="Just turning 50!"/>
 		<property name="info" value="https://conpdeparty.com/617-large_default/globo-foil-happy-birthday-rosa-oro.jpg"/>
 	</bean>
+
 	<bean id="shout04" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/04/06 00:00"/>
 		<property name="author" value="Michael Jackson"/>
@@ -93,6 +94,36 @@
 		<property name="link"> <null/></property>
 	</bean>
 	
-
-
+  	<!-- Spam-->
+	<bean name="spam1" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="hard core" />
+	</bean>
+	<bean name="spam2" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="sex" />
+	</bean>
+	<bean name="spam3" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="viagra" />
+	</bean>
+	<bean name="spam4" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="cialis" />
+	</bean>
+	<bean name="spam5" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="nigeria" />
+	</bean>
+		<bean name="spam6" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="you've won" />
+	</bean>
+	<bean name="spam7" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="million dollar" />
+	</bean>
+		<bean name="spam8" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="sexo" />
+	</bean>
+		<bean name="spam9" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="Has ganado" />
+	</bean>
+	<bean name="spam10" class="acme.entities.spam.Spam">
+		<property name="spamWords" value="millón de euros" />
+	</bean>
+  
 </beans>
