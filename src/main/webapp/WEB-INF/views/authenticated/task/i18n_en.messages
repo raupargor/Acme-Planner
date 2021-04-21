@@ -1,4 +1,4 @@
-# i18n_es.messages
+# i18n_en.messages
 #
 # Copyright (c) 2012-2021 Rafael Corchuelo.
 #
@@ -8,12 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.shout.form.label.author = Autor:
-anonymous.shout.form.label.text = Texto:
-anonymous.shout.form.label.info = Info:
-anonymous.shout.form.button.create = ¡Gritar!
-anonymous.shout.form.button.return = Volver
-
-anonymous.shout.list.label.moment = Momento
-anonymous.shout.list.label.author = Autor
-anonymous.shout.list.label.text = Texto
+authenticated.task.list.label.title = Title
+authenticated.task.list.label.startMoment = Start Moment
+authenticated.task.list.label.endMoment = End Moment
+authenticated.task.list.label.workload = Workload
+authenticated.task.list.label.status = Status
+authenticated.task.list.label.description = Description
+authenticated.task.list.label.link = Link
