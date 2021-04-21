@@ -12,7 +12,6 @@ import lombok.Setter;
 public class Spam extends DomainEntity {
 	
 	// Serialisation identifier -----------------------------------------------
-
 	protected static final long	serialVersionUID	= 1L;
 
 
