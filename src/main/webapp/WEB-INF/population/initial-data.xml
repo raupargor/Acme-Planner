@@ -73,4 +73,8 @@
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
 	
+	<!-- <bean name="spam1" class="acme.entities.spam">
+		<property name="spamWords" value="hard core" />
+	</bean> -->
+	
 </beans>
