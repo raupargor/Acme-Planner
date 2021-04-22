@@ -1,0 +1,5 @@
+administrator.dashboard.form.title.show = Dashboard
+
+administrator.dashboard.form.title.general-indicators = General indicators
+administrator.dashboard.form.label.total-number-task-public =  Total number of tasks public
+administrator.dashboard.form.label.total-number-task-private =  Total number of tasks private
