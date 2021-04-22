@@ -22,19 +22,15 @@ public class SpamService {
 			spamWords.add(todoSpam.get(j).getSpamWords());
 		}	
 		
-		final String textoConFormato ="."+text.toLowerCase().replace(":", ".").replace(" ", ".").replace(";", ".")
-			.replace(",", ".").replace("(", ".").replace(")", ".").replace("-", ".").replace("_", ".")
-			.replace(">", ".").replace("<", ".").replace("¡", ".").replace("?", ".").replace("¿", ".")
-			.replace("!", ".").replace("}", ".").replace("{", ".").replace("*", ".").replace("+", ".")+".";
-		
-		final String[] textoCortado= textoConFormato.split(".");
+		final String textoConFormato = this.formatearTexto(text);
+		final String[] textoCortado= textoConFormato.split("\\s+");
 		Integer procentajeSpamDetectado = 0;
-		final Integer tamanoTexto=textoCortado.length+1;
+		final Integer tamanoTexto=textoCortado.length;
 
 		for(int i=0; i<spamWords.size(); i++) {
-			final String palabra = spamWords.get(i);
-			if(text.contains(palabra)){
-				procentajeSpamDetectado=procentajeSpamDetectado+(100/tamanoTexto-1);
+			final String palabra = this.formatearTexto(spamWords.get(i));
+			if(textoConFormato.contains(palabra)){
+				procentajeSpamDetectado=procentajeSpamDetectado+(100/tamanoTexto);
 			}
 		}
 		if(umbralMaximo<procentajeSpamDetectado) {
@@ -43,6 +39,13 @@ public class SpamService {
 			return false ;	
 		}
 		
+	}
+	
+	private String formatearTexto(final String texto) {
+		return texto.toLowerCase().replace(".", " ").replace(":", " ").replace(";", " ")
+		.replace(",", " ").replace("(", " ").replace(")", " ").replace("-", " ").replace("_", " ")
+		.replace(">", " ").replace("<", " ").replace("¡", " ").replace("?", " ").replace("¿", " ")
+		.replace("!", " ").replace("}", " ").replace("{", " ").replace("*", " ").replace("+", " ").trim();
 	}
 
 }
