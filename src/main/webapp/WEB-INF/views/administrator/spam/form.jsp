@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page language="java"%>
 
-</body>
-</html>
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
+
+<acme:form>
+	<acme:form-textbox code="administrator.spam.form.label.spamWords" path="spamWords"/>
+		
+	<acme:form-submit code="administrator.spam.form.button.update" action="/administrator/spam/update"/>
+	
+  	<acme:form-return code="administrator.spam.form.button.return"/>
+</acme:form>

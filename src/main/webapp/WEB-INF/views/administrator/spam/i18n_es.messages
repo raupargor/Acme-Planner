@@ -9,3 +9,6 @@
 # they accept any liabilities with respect to them.
 
 administrator.spam.list.label.spamWords = Palabras SPAM
+administrator.spam.form.label.spamWords = Palabra Spam
+administrator.spam.form.button.update = Actualizar Spam
+administrator.spam.form.button.return = Volver
