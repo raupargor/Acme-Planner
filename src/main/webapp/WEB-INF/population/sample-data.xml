@@ -55,6 +55,7 @@
 		<property name="workload" value="1.5"/>
 		<property name="status" value="PUBLIC"/>
 		<property name="link"> <null/></property>
+		<property name="manager" ref="administratorManager"/>
 	</bean>
 	<bean id="task02" class="acme.entities.tasks.Task">
 		<property name="title" value="List public tasks that are non-finished for level C"/>
@@ -65,6 +66,7 @@
 		<property name="workload" value="2.5"/>
 		<property name="status" value="PUBLIC"/>
 		<property name="link"> <null/></property>
+		<property name="manager" ref="administratorManager"/>
 	</bean>
 	<bean id="task03" class="acme.entities.tasks.Task">
 		<property name="title" value="List public tasks finished for level C"/>
@@ -74,6 +76,7 @@
 		<property name="workload" value="2.5"/>
 		<property name="status" value="PRIVATE"/>
 		<property name="link"> <null/></property>
+		<property name="manager" ref="administratorManager"/>
 	</bean>
 	<bean id="task04" class="acme.entities.tasks.Task">
 		<property name="title" value="Show the details for level C"/>
@@ -83,6 +86,7 @@
 		<property name="workload" value="2.5"/>
 		<property name="status" value="PRIVATE"/>
 		<property name="link"> <null/></property>
+		<property name="manager" ref="administratorManager2"/>
 	</bean>
 	<bean id="task05" class="acme.entities.tasks.Task">
 		<property name="title" value="Create a dashboard for level C"/>
@@ -92,6 +96,7 @@
 		<property name="workload" value="3.8"/>
 		<property name="status" value="PRIVATE"/>
 		<property name="link"> <null/></property>
+		<property name="manager" ref="administratorManager2"/>
 	</bean>
 	
   	<!-- Spam-->
@@ -124,6 +129,75 @@
 	</bean>
 	<bean name="spam10" class="acme.entities.spam.Spam">
 		<property name="spamWords" value="millón de euros" />
+	</bean>
+	
+	
+	<bean name="managerUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager" />
+		<property name="password" value="manager" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="manager" />
+				<property name="surname" value="Manager" />
+				<property name="email" value="manager@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="administratorAdministrator" />
+				<ref bean="administratorAuthenticated" />
+				<ref bean="administratorManager" />
+			</list>
+		</property>
+	</bean>
+  
+  	<bean name="administratorAdministrator" class="acme.framework.entities.Administrator">
+		<property name="userAccount" ref="managerUserAccount" />
+	</bean>
+	
+	<bean name="administratorAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="managerUserAccount" />
+	</bean>
+	
+	<bean name="administratorManager" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="managerUserAccount" />
+		<property name="company" value="TestManager"/>
+  		<property name="sector" value="TestManager"/>
+	</bean>
+	
+	<bean name="managerUserAccount2" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager2" />
+		<property name="password" value="manager2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="manager" />
+				<property name="surname" value="Manager" />
+				<property name="email" value="manager2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="administratorAdministrator2" />
+				<ref bean="administratorAuthenticated2" />
+				<ref bean="administratorManager2" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="administratorAdministrator2" class="acme.framework.entities.Administrator">
+		<property name="userAccount" ref="managerUserAccount" />
+	</bean>
+	
+	<bean name="administratorAuthenticated2" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="managerUserAccount" />
+	</bean>
+	
+	<bean name="administratorManager2" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="managerUserAccount2" />
+		<property name="company" value="TestManager2"/>
+  		<property name="sector" value="TestManager2"/>
 	</bean>
   
 </beans>
