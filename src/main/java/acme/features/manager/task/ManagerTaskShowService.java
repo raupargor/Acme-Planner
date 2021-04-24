@@ -18,17 +18,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
-
-		boolean result;
-		int id;
-		Task task;
-
-		id = request.getModel().getInteger("id");
-		task = this.repository.findOneTaskById(id);
-		
-		result = task.getStatus().name().equals("PRIVADO");//PUEDE QUE NO FUNCIONE
-
-		return result;
+		return true;
 	}
 
 	@Override
@@ -38,7 +28,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		assert model != null;
 
 		request.unbind(entity, model, "title", "startMoment", "endMoment", "description", "workload", "link", "status");
-		
+		model.setAttribute("readonly", true);
 		
 	}
 
