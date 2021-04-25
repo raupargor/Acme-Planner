@@ -8,13 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.shout.form.label.author = Autor:
-anonymous.shout.form.label.text = Texto:
-anonymous.shout.form.label.info = Info:
-anonymous.shout.form.button.create = ¡Gritar!
-anonymous.shout.form.button.return = Volver
-anonymous.shout.error.spam = Contiene spam
+authenticated.manager.manager.form.title.create = Hazte manager
+authenticated.manager.manager.form.title.update = Actualiza tus datos de manager
 
-anonymous.shout.list.label.moment = Momento
-anonymous.shout.list.label.author = Autor
-anonymous.shout.list.label.text = Texto
+authenticated.manager.manager.form.label.compañía = Compañía
+authenticated.manager.manager.form.label.sector = Sector
+
+authenticated.manager.manager.form.button.create = Registrar
+authenticated.manager.manager.form.button.update = Actualizar
+authenticated.manager.manager.form.button.return = Volver

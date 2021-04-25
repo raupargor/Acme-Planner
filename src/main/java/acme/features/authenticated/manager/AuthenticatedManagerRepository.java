@@ -1,5 +1,5 @@
 /*
- * AnonymousShoutRepository.java
+ * AuthenticatedProviderRepository.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
@@ -10,20 +10,22 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.shout;
-
-import java.time.LocalDate;
-import java.util.Collection;
+package acme.features.authenticated.manager;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.shouts.Shout;
+import acme.entities.roles.Manager;
+import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnonymousShoutRepository extends AbstractRepository {
+public interface AuthenticatedManagerRepository extends AbstractRepository {
 
-	@Query(value = "select s from Shout s where month(s.moment) >= month(?1) and year(s.moment) >= year(?1) order by s.moment asc")
-	Collection<Shout> findLessThanAMonth(LocalDate time);
+	@Query("select p from Manager p where p.userAccount.id = ?1")
+	Manager findOneManagerByUserAccountId(int id);
+
+	@Query("select ua from UserAccount ua where ua.id = ?1")
+	UserAccount findOneUserAccountById(int id);
+
 }
