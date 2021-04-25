@@ -12,6 +12,13 @@ authenticated.task.list.label.title = Title
 authenticated.task.list.label.startMoment = Start Moment
 authenticated.task.list.label.endMoment = End Moment
 authenticated.task.list.label.workload = Workload
-authenticated.task.list.label.status = Status
-authenticated.task.list.label.description = Description
-authenticated.task.list.label.link = Link
+
+authenticated.task.form.label.title = Title
+authenticated.task.form.label.startMoment = Start Moment
+authenticated.task.form.label.endMoment = End Moment
+authenticated.task.form.label.workload = Workload
+authenticated.task.form.label.status = Status
+authenticated.task.form.label.description = Description
+authenticated.task.form.label.link = Link
+
+authenticated.task.form.button.return = Return
