@@ -5,9 +5,12 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.spam.Spam;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.components.Response;
 import acme.framework.entities.Administrator;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -26,13 +29,6 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 			assert request != null;
 
 			return true;
-		}
-
-		@Override
-		public void validate(final Request<Spam> request, final Spam entity, final Errors errors) {
-			assert request != null;
-			assert entity != null;
-			assert errors != null;	
 		}
 
 		@Override
@@ -56,13 +52,19 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 		@Override
 		public Spam findOne(final Request<Spam> request) {
 			assert request != null;
-
-			Spam result;
 			int id;
+			Spam result;
 			id = request.getModel().getInteger("id");
 			result = this.repository.findOneSpamById(id);
 			
 			return result;
+		}
+		
+		@Override
+		public void validate(final Request<Spam> request, final Spam entity, final Errors errors) {
+			assert request != null;
+			assert entity != null;
+			assert errors != null;	
 		}
 
 		@Override
@@ -72,5 +74,15 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 
 			this.repository.save(entity);
 		}
+		
+		@Override
+	    public void onSuccess(final Request<Spam> request, final Response<Spam> response) {
+	        assert request != null;
+	        assert response != null;
+
+	        if (request.isMethod(HttpMethod.POST)) {
+	            PrincipalHelper.handleUpdate();
+	        }
+	    }
 
 }
