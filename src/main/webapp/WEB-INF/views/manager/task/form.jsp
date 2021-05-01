@@ -26,8 +26,12 @@
 	</acme:form-select>
 	<acme:form-textarea code="manager.task.form.label.description" path="description"/>
 	<acme:form-url code="manager.task.form.label.link" path="link"/>
-	<jstl:if test="${!readonly}">
+	<jstl:if test="${!update}">
  		<acme:form-submit code="manager.task.form.button.create" action="/manager/task/create"/> 
 	</jstl:if>
+	<jstl:if test="${update}">
+ 		<acme:form-submit code="manager.task.form.button.update" action="/manager/task/update"/> 
+	</jstl:if>
+		<acme:form-submit code="manager.task.form.button.delete" action="/manager/task/delete"/> 
 	<acme:form-return code="manager.task.form.button.return"/>
 </acme:form>

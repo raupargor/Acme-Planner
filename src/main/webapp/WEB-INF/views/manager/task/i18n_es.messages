@@ -15,10 +15,6 @@ manager.task.list.label.workload = Carga de trabajo
 manager.task.list.label.status = Estado
 manager.task.list.label.description = Descripcion
 manager.task.list.label.link = Enlace
-manager.task.error.spam = Contiene spam
-manager.task.error.startMoment = El comienzo debe estar en el futuro
-manager.task.error.endMoment = El fin debe ser después del comienzo
-manager.task.error.workload = La carga de trabajo debe ser menor
 
 manager.task.form.label.title = Titulo
 manager.task.form.label.startMoment = Fecha Inicial
@@ -29,3 +25,10 @@ manager.task.form.label.description = Descripcion
 manager.task.form.label.link = Enlace
 manager.task.form.button.create = Crear tarea
 manager.task.form.button.return = Volver
+manager.task.form.button.update = Actualizar tarea
+manager.task.form.button.delete = Borrar tarea
+
+manager.task.error.spam = Contiene spam
+manager.task.error.startMoment = El comienzo debe estar en el futuro
+manager.task.error.endMoment = El fin debe ser después del comienzo
+manager.task.error.workload = La carga de trabajo debe ser menor

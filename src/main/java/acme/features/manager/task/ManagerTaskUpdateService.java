@@ -1,10 +1,15 @@
 package acme.features.manager.task;
 
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+import acme.features.spam.SpamService;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -19,6 +24,9 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 
 	@Autowired
 	protected ManagerTaskRepository repository;
+	
+	@Autowired
+	protected SpamService spamService;
 
 	// AbstractUpdateService<Authenticated, Provider> interface ---------------
 
@@ -46,6 +54,8 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert model != null;
 
 		request.unbind(entity, model, "title", "startMoment", "endMoment", "description", "workload", "link", "status");
+		model.setAttribute("readonly", false);
+		model.setAttribute("update", true);
 	}
 
 	@Override
@@ -66,6 +76,44 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		//Validacion de SPAM
+		final boolean spam1= !this.spamService.filtroSpam(entity.getTitle(),10);
+		errors.state(request, spam1, "title","manager.task.error.spam");
+		final boolean spam2= !this.spamService.filtroSpam(entity.getDescription(),10);
+		errors.state(request, spam2, "description","manager.task.error.spam");
+				
+		//Validacion fechas
+		final Date startMoment = entity.getStartMoment();
+		final Date endMoment = entity.getEndMoment();	
+		final Calendar c1 = Calendar.getInstance();
+		final Instant hoy = c1.toInstant();
+				
+		if(startMoment == null) {
+				
+		}else {
+			final Instant start = startMoment.toInstant();
+			final Boolean fechaInicioBien = hoy.isBefore(start);
+			errors.state(request, fechaInicioBien, "startMoment","manager.task.error.startMoment");
+		}
+
+		if(endMoment == null || startMoment == null) {
+					
+		}else {
+			final Boolean fechaFinBien = startMoment.before(endMoment);
+			errors.state(request, fechaFinBien, "endMoment","manager.task.error.endMoment");
+		}
+		//Validacion workload
+		final Double workload = entity.getWorkload();
+		Boolean workloadCorrecto;
+		if(workload == null || endMoment == null || startMoment == null) {
+					
+		}else {
+			final Double workloadMaxInDays = (double)(endMoment.getTime()-startMoment.getTime())/86400000;
+			final Double workloadMaxInHours = workloadMaxInDays*24;
+			workloadCorrecto = workload <= workloadMaxInHours && workload > 0.;
+			errors.state(request, workloadCorrecto, "workload","manager.task.error.workload");
+		}
 	}
 
 	@Override

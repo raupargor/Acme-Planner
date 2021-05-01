@@ -131,18 +131,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 
 		Manager manager;
-		//final Date startMoment;
-		//final Date endMoment;
 		
 		manager = this.repository.findManagerByUsername(request.getPrincipal().getUsername());
-
-		//startMoment = new Date(System.currentTimeMillis() - 2);
-		//endMoment = new Date(System.currentTimeMillis() - 1);
-		//entity.setStartMoment(startMoment);
-		//entity.setEndMoment(endMoment);
-		
-//		entity.setStatus(TaskStatus.PUBLIC);
-//		entity.setWorkload(2.);
 		
 		entity.setManager(manager);
 		
