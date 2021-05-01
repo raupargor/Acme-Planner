@@ -11,7 +11,7 @@ import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorDashboardDisplayService implements AbstractShowService<Administrator, Dashboard> {
+public class AdministratorDashboardShowService implements AbstractShowService<Administrator, Dashboard> {
 
 	@Autowired
 	protected AdministratorDashboardRepository repository;

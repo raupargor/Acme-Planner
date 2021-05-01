@@ -16,7 +16,7 @@ import acme.framework.entities.Administrator;
 public class AdministratorDashboardController extends AbstractController<Administrator, Dashboard> {
 	
 	@Autowired
-	protected AdministratorDashboardDisplayService displayService;
+	protected AdministratorDashboardShowService displayService;
 	
 	@PostConstruct
 	protected void initialise() {
