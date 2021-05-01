@@ -1,5 +1,7 @@
 package acme.features.manager.task;
 
+import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskStatus;
+import acme.features.spam.SpamService;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -18,6 +21,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 	@Autowired
 	protected ManagerTaskRepository repository;
+	 
+	@Autowired
+	protected SpamService spamService;
 	
 	@Override
 	public boolean authorise(final Request<Task> request) {
@@ -78,7 +84,45 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		//HAY QUE VALIDAR LAS FECHAS Y EL WORKLOAD COMO ES DEBIDO (POR HACER)
+		
+		//Validacion de SPAM
+		final boolean spam1= !this.spamService.filtroSpam(entity.getTitle(),10);
+		errors.state(request, spam1, "title","manager.task.error.spam");
+		final boolean spam2= !this.spamService.filtroSpam(entity.getDescription(),10);
+		errors.state(request, spam2, "description","manager.task.error.spam");
+		
+		//Validacion fechas
+		final Date startMoment = entity.getStartMoment();
+		final Date endMoment = entity.getEndMoment();	
+		final Calendar c1 = Calendar.getInstance();
+		final Instant hoy = c1.toInstant();
+		
+		if(startMoment == null) {
+			
+		}else {
+			final Instant start = startMoment.toInstant();
+			final Boolean fechaInicioBien = hoy.isBefore(start);
+			errors.state(request, fechaInicioBien, "startMoment","manager.task.error.startMoment");
+		}
+
+		if(endMoment == null || startMoment == null) {
+			
+		}else {
+			final Boolean fechaFinBien = startMoment.before(endMoment);
+		errors.state(request, fechaFinBien, "endMoment","manager.task.error.endMoment");
+		}
+		//Validacion workload
+		final Double workload = entity.getWorkload();
+		Boolean workloadCorrecto;
+		if(workload == null || endMoment == null || startMoment == null) {
+			
+		}else {
+			final Double workloadMaxInDays = (double)(endMoment.getTime()-startMoment.getTime())/86400000;
+			final Double workloadMaxInHours = workloadMaxInDays*24;
+			workloadCorrecto = workload <= workloadMaxInHours && workload > 0.;
+			errors.state(request, workloadCorrecto, "workload","manager.task.error.workload");
+		}
+		
 	}
 
 	@Override
@@ -87,18 +131,18 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 
 		Manager manager;
-		Date startMoment;
-		Date endMoment;
+		//final Date startMoment;
+		//final Date endMoment;
 		
 		manager = this.repository.findManagerByUsername(request.getPrincipal().getUsername());
 
-		startMoment = new Date(System.currentTimeMillis() - 2);
-		endMoment = new Date(System.currentTimeMillis() - 1);
-		entity.setStartMoment(startMoment);
-		entity.setEndMoment(endMoment);
+		//startMoment = new Date(System.currentTimeMillis() - 2);
+		//endMoment = new Date(System.currentTimeMillis() - 1);
+		//entity.setStartMoment(startMoment);
+		//entity.setEndMoment(endMoment);
 		
-		entity.setStatus(TaskStatus.PUBLIC);
-		entity.setWorkload(2.);
+//		entity.setStatus(TaskStatus.PUBLIC);
+//		entity.setWorkload(2.);
 		
 		entity.setManager(manager);
 		

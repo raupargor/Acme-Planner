@@ -8,7 +8,4 @@
 	<acme:list-column code="manager.task.list.label.startMoment" path="startMoment" width="20%"/>
 	<acme:list-column code="manager.task.list.label.endMoment" path="endMoment" width="20%"/>
 	<acme:list-column code="manager.task.list.label.workload" path="workload" width="20%"/>
-	<acme:list-column code="manager.task.list.label.status" path="status" width="20%"/>
-	<acme:list-column code="manager.task.list.label.description" path="description" width="60%"/>
-	<acme:list-column code="manager.task.list.label.link" path="link" width="20%"/>
 </acme:list>

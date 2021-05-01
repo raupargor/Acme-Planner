@@ -15,6 +15,10 @@ manager.task.list.label.workload = Workload
 manager.task.list.label.status = Status
 manager.task.list.label.description = Description
 manager.task.list.label.link = Link
+manager.task.error.spam = Contains spam
+manager.task.error.startMoment = Start Moment must be in future
+manager.task.error.endMoment = End Moment must be after start moment
+manager.task.error.workload = Workload must be lower
 
 manager.task.form.label.title = Title
 manager.task.form.label.startMoment = Start Moment
