@@ -509,9 +509,15 @@ ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Plan
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200): Filter execution threw an exception
 java.lang.AssertionError
+
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-KDLR1OEF with PID 4148 (C:\Users\Servando\Workspace-21.1\Projects\DP2-June13\target\classes started by Servando in C:\Users\Servando\Workspace-21.1\Projects\DP2-June13)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 7.438 seconds (JVM running for 8.187)
+
 INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-KDLR1OEF with PID 16272 (C:\Users\Servando\Workspace-21.1\Projects\DP2-June13\target\classes started by Servando in C:\Users\Servando\Workspace-21.1\Projects\DP2-June13)
 INFO [acme.Launcher] The following profiles are active: development,populator
 INFO [acme.Launcher] Started Launcher in 14.026 seconds (JVM running for 15.165)
+
 INFO [acme.framework.utilities.DatabasePopulator] Populating sample data
 INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
 INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
@@ -595,6 +601,14 @@ INFO [acme.framework.utilities.DatabasePopulator] > Persisting spam8 = sexo
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting spam9 = Has ganado
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting spam10 = millón de euros
 INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-KDLR1OEF with PID 15976 (C:\Users\Servando\Workspace-21.1\Projects\DP2-June13\target\classes started by Servando in C:\Users\Servando\Workspace-21.1\Projects\DP2-June13)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 7.564 seconds (JVM running for 8.23)
+
 INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-KDLR1OEF with PID 10396 (C:\Users\Servando\Workspace-21.1\Projects\DP2-June13\target\classes started by Servando in C:\Users\Servando\Workspace-21.1\Projects\DP2-June13)
 INFO [acme.Launcher] The following profiles are active: development,populator
 INFO [acme.Launcher] Started Launcher in 11.326 seconds (JVM running for 12.443)
@@ -738,6 +752,7 @@ ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.fra
 INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-KDLR1OEF with PID 3608 (C:\Users\Servando\Workspace-21.1\Projects\DP2-June13\target\classes started by Servando in C:\Users\Servando\Workspace-21.1\Projects\DP2-June13)
 INFO [acme.Launcher] The following profiles are active: development,populator
 INFO [acme.Launcher] Started Launcher in 9.067 seconds (JVM running for 9.932)
+
 INFO [acme.framework.utilities.DatabasePopulator] Populating sample data
 INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
 INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
@@ -2422,3 +2437,4 @@ INFO [acme.framework.utilities.DatabasePopulator] > Persisting task18 = Task [ti
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting task19 = Task [title=Delete shout funcionallity, startMoment=Mon Jan 11 09:00:00 CET 2021, endMoment=Thu Feb 11 12:00:00 CET 2021, description=Delete shout funcionallity , workload=24.0, link=null, status=PUBLIC, manager=acme.entities.roles.Manager{id=249, version=0}]
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting task20 = Task [title=Populate Data Base, startMoment=Mon Feb 01 00:00:00 CET 2021, endMoment=Sun Feb 28 00:00:00 CET 2021, description=Populate Data Base with new information, workload=62.6, link=null, status=PUBLIC, manager=acme.entities.roles.Manager{id=253, version=0}]
 INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+
