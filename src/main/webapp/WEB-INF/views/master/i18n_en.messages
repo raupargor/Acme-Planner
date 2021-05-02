@@ -45,6 +45,7 @@ master.menu.anonymous.listTask = List tasks
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.spam = Spam
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shutdown = Shut down
@@ -59,6 +60,15 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.createTask = Create task
+master.menu.manager.listTask = List tasks
+master.menu.manager.favourite-link = Favourite link
+master.menu.manager.showTask = Show Task
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -67,6 +77,8 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.become-manager = Become a manager
+master.menu.user-account.manager = Manager data
 
 # master.menu.authenticated ##############################################################
 

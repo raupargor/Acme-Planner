@@ -1,4 +1,4 @@
-package acme.features.anonymous.task;
+package acme.features.administrator.spam;
 
 import javax.annotation.PostConstruct;
 
@@ -6,29 +6,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.tasks.Task;
+import acme.entities.spam.Spam;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("/anonymous/task/")
-public class AnonymousTaskController extends AbstractController<Anonymous, Task> {
+@RequestMapping("/administrator/spam/")
+public class AdministratorSpamController extends AbstractController<Administrator, Spam>{
 	
 	@Autowired
-	private AnonymousTaskListService listService;
+	protected AdministratorSpamListService listService;
 	
 	@Autowired
-	private AnonymousTaskCreateService createService;
+	protected AdministratorSpamShowService showService;
 	
 	@Autowired
-	private AnonymousTaskShowService showService;
+	protected AdministratorSpamUpdateService updateService;
 	
 	@PostConstruct
-	private void initialise() {
+	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
  
 	}
 
