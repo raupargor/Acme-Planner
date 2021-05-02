@@ -36,16 +36,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	Double minimumTaskWorkload();
 	
 	//Average, deviation, minimum, and maximum task execution period
-	/*@Query("")
-	Double averageTaskextPeriod();
+	@Query("select avg(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
+	Double averageTaskExtPeriod();
 	
-	@Query("")
+	@Query("select stddev(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
 	Double deviationTaskExtPeriod();
 	
-	@Query("")
+	@Query("select min(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
 	Double maximumTaskExtPeriod();
 	
-	@Query("")
-	Double minimumTaskExtPeriod();*/
+	@Query("select max(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
+	Double minimumTaskExtPeriod();
 	
 }

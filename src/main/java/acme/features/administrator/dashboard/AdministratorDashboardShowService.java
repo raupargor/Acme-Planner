@@ -32,9 +32,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		request.unbind(entity, model, //
 		"totalNumberTaskPublic","totalNumberTaskPrivate","totalNumberTaskFinished",
 		"totalNumberTaskNoFinished","averageTaskWorkload",
-		"deviationTaskWorkload","maximumTaskWorkload","minimumTaskWorkload"/*,
-		"averageTaskextPeriod","deviationTaskExtPeriod","maximumTaskExtPeriod",
-		"minimumTaskExtPeriod"*/);
+		"deviationTaskWorkload","maximumTaskWorkload","minimumTaskWorkload",
+		"averageTaskExtPeriod","deviationTaskExtPeriod","maximumTaskExtPeriod",
+		"minimumTaskExtPeriod");
 	}
 
 	@Override
@@ -50,10 +50,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double deviationTaskWorkload;
 		final Double maximumTaskWorkload;
 		final Double minimumTaskWorkload;
-		/*final Double averageTaskExtPeriod;
+		final Double averageTaskExtPeriod;
 		final Double deviationTaskExtPeriod;
 		final Double maximumTaskExtPeriod;
-		final Double minimumTaskExtPeriod;*/
+		final Double minimumTaskExtPeriod;
 
 		totalNumberTaskPublic = this.repository.totalNumberTaskbyStatus(TaskStatus.PUBLIC);
 		totalNumberTaskPrivate = this.repository.totalNumberTaskbyStatus(TaskStatus.PRIVATE);
@@ -66,10 +66,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		maximumTaskWorkload = this.repository.maximumTaskWorkload();
 		minimumTaskWorkload= this.repository.minimumTaskWorkload();
 		
-		/*averageTaskExtPeriod = this.repository.averageTaskExtPeriod();
+		averageTaskExtPeriod = this.repository.averageTaskExtPeriod();
 		deviationTaskExtPeriod = this.repository.deviationTaskExtPeriod();
 		maximumTaskExtPeriod = this.repository.maximumTaskExtPeriod();
-		minimumTaskExtPeriod= this.repository.minimumTaskExtPeriod();*/
+		minimumTaskExtPeriod= this.repository.minimumTaskExtPeriod();
 		
 		result = new Dashboard();
 		result.setTotalNumberTaskPublic(totalNumberTaskPublic);
@@ -80,6 +80,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setDeviationTaskWorkload(deviationTaskWorkload);
 		result.setMaximumTaskWorkload(maximumTaskWorkload);
 		result.setMinimumTaskWorkload(minimumTaskWorkload);
+		result.setAverageTaskExtPeriod(averageTaskExtPeriod);
+		result.setDeviationTaskExtPeriod(deviationTaskExtPeriod);
+		result.setMaximumTaskExtPeriod(maximumTaskExtPeriod);
+		result.setMinimumTaskExtPeriod(minimumTaskExtPeriod);
 		
 
 		return result;
