@@ -154,7 +154,7 @@
 	</bean>
 		<bean id="task08" class="acme.entities.tasks.Task">
 		<property name="title" value="Change the message of the Welcome page"/>
-		<property name="startMoment" value= "2023/11/21 10:10"/>
+		<property name="startMoment" value= "2020/11/21 10:10"/>
 		<property name="endMoment" value="2021/12/30 17:26"/>
 		<property name="description" value="Change the message of the Welcome page to an image of a monkey"/>
 		<property name="workload" value="22.5"/>

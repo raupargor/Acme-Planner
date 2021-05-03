@@ -42,10 +42,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select stddev(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
 	Double deviationTaskExtPeriod();
 	
-	@Query("select min(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
+	@Query("select max(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
 	Double maximumTaskExtPeriod();
 	
-	@Query("select max(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
+	@Query("select min(DATEDIFF(t.endMoment, t.startMoment)) from Task t")
 	Double minimumTaskExtPeriod();
 	
 }
