@@ -1,6 +1,7 @@
 package acme.entities.spam;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -16,6 +17,7 @@ public class Spam extends DomainEntity {
 
 
 	// Attributes -------------------------------------------------------------
+	@NotEmpty
 	protected String spamWords;
 
 
