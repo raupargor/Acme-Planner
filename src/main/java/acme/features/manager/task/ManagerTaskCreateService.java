@@ -48,8 +48,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "startMoment", "endMoment", "description", "workload", "link", "status");
-		
+		request.unbind(entity, model, "title", "startMoment", "endMoment", "description", "workload", "link", "status", "manager");
+	
 	}
 
 	@Override
@@ -116,13 +116,15 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		Boolean workloadCorrecto;
 		if(workload == null || endMoment == null || startMoment == null) {
 			
+		}else if(workload <= 0.0){
+			errors.state(request, false, "workload","manager.task.error.workloadNegative");
 		}else {
 			final Double workloadMaxInDays = (double)(endMoment.getTime()-startMoment.getTime())/86400000;
 			final Double workloadMaxInHours = workloadMaxInDays*24;
 			workloadCorrecto = workload <= workloadMaxInHours && workload > 0.;
 			errors.state(request, workloadCorrecto, "workload","manager.task.error.workload");
 		}
-		
+
 	}
 
 	@Override

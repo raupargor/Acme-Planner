@@ -34,8 +34,15 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
-
-		return true;
+		
+		Boolean result;
+		int taskId;
+		
+		taskId = request.getModel().getInteger("id");
+		final Task task = this.repository.findOneTaskById(taskId);
+		result = task.getManager().getUserAccount().getId()==request.getPrincipal().getAccountId();
+		
+		return result;
 	}
 
 	@Override
@@ -53,9 +60,8 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "startMoment", "endMoment", "description", "workload", "link", "status");
-		model.setAttribute("readonly", false);
-		model.setAttribute("update", true);
+		request.unbind(entity, model, "title", "startMoment", "endMoment", "description", "workload", "link", "status", "manager");
+		
 	}
 
 	@Override
@@ -107,7 +113,9 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		final Double workload = entity.getWorkload();
 		Boolean workloadCorrecto;
 		if(workload == null || endMoment == null || startMoment == null) {
-					
+			
+		}else if(workload <= 0.0){
+			errors.state(request, false, "workload","manager.task.error.workloadNegative");
 		}else {
 			final Double workloadMaxInDays = (double)(endMoment.getTime()-startMoment.getTime())/86400000;
 			final Double workloadMaxInHours = workloadMaxInDays*24;
