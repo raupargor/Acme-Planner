@@ -31,7 +31,8 @@
 	</jstl:if>
 	<jstl:if test="${update}">
  		<acme:form-submit code="manager.task.form.button.update" action="/manager/task/update"/> 
+ 		<acme:form-submit code="manager.task.form.button.delete" action="/manager/task/delete"/> 
+ 		
 	</jstl:if>
-		<acme:form-submit code="manager.task.form.button.delete" action="/manager/task/delete"/> 
 	<acme:form-return code="manager.task.form.button.return"/>
 </acme:form>
