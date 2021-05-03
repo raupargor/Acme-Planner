@@ -16,7 +16,6 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-<jstl:if test="${command == 'create'}"> Conviertete en manager</jstl:if>
 	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.manager.form.button.create" action="/authenticated/manager/create"/>
 	<acme:form-return code="authenticated.manager.manager.form.button.return"/>
 </acme:form>
