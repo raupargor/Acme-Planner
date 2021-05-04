@@ -1,6 +1,8 @@
 package acme.entities.spam;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import acme.framework.entities.DomainEntity;
@@ -18,6 +20,8 @@ public class Threshold extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 	@NotNull
+	@Min(1)
+	@Max(100)
 	protected Double number;
 
 
