@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
-import acme.entities.roles.Provider;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -61,7 +60,7 @@ public class AuthenticatedManagerCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "company", "sector");
+		request.unbind(entity, model);
 	}
 
 	@Override
