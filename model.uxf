@@ -405,4 +405,19 @@ Spam
 </panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>812</x>
+      <y>567</y>
+      <w>161</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Threshold
+--
++ number: Double {NotEmpty}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

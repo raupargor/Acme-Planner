@@ -8,9 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.spam.list.label.spamWords = Spam Words
-administrator.spam.form.label.spamWords = Spam Word
-administrator.spam.form.button.update = Update Spam
-administrator.spam.form.button.return = Return
+administrator.spam.form.label.number = Maximum Spam Threshold
 
-administrator.spam.form.button.threshold-show = Update the Spam Theshold
+administrator.spam.form.button.update = Update Threshold
+administrator.spam.form.button.return = Return

@@ -14,7 +14,7 @@ public class SpamService {
 	@Autowired
 	private SpamRepository spamRep;
 
-	public boolean filtroSpam(final String text, final Integer umbralMaximo) { 
+	public boolean filtroSpam(final String text, final Double umbralMaximo) { 
 		
 		final List<Spam> todoSpam= this.spamRep.findAllSpam();
 		final List<String>spamWords= new ArrayList<String>();

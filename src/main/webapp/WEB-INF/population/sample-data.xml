@@ -18,7 +18,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
-
+	
+	
 
 	<bean id="shout01" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/02/13 19:39"/>
@@ -312,6 +313,9 @@
 	</bean>
 	<bean name="spam10" class="acme.entities.spam.Spam">
 		<property name="spamWords" value="millón de euros" />
+	</bean>
+	<bean name="threshold1" class="acme.entities.spam.Threshold">
+		<property name="number" value="10.0" />
 	</bean>
 	
 	

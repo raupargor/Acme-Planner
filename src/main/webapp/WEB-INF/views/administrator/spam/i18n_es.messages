@@ -12,3 +12,5 @@ administrator.spam.list.label.spamWords = Palabras SPAM
 administrator.spam.form.label.spamWords = Palabra Spam
 administrator.spam.form.button.update = Actualizar Spam
 administrator.spam.form.button.return = Volver
+
+administrator.spam.form.button.threshold-show = Actualizar el Umbral

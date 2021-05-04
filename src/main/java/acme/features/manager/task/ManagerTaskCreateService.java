@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskStatus;
+import acme.features.administrator.threshold.AdministratorThresholdRepository;
 import acme.features.spam.SpamService;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -24,6 +25,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	 
 	@Autowired
 	protected SpamService spamService;
+	@Autowired
+	protected AdministratorThresholdRepository thresholdRepository;
 	
 	@Override
 	public boolean authorise(final Request<Task> request) {
@@ -84,11 +87,11 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+		final Double threshold = this.thresholdRepository.findThreshold().getNumber();
 		//Validacion de SPAM
-		final boolean spam1= !this.spamService.filtroSpam(entity.getTitle(),10);
+		final boolean spam1= !this.spamService.filtroSpam(entity.getTitle(),threshold);
 		errors.state(request, spam1, "title","manager.task.error.spam");
-		final boolean spam2= !this.spamService.filtroSpam(entity.getDescription(),10);
+		final boolean spam2= !this.spamService.filtroSpam(entity.getDescription(),threshold);
 		errors.state(request, spam2, "description","manager.task.error.spam");
 		
 		//Validacion fechas
