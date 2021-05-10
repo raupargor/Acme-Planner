@@ -1,6 +1,6 @@
 # i18n_es.messages
 #
-# Copyright (C) 2012-2021 Rafael Corchuelo.
+# Copyright (c) 2012-2021 Rafael Corchuelo.
 #
 # In keeping with the traditional purpose of furthering education and research, it is
 # the policy of the copyright owner to permit non-commercial use and redistribution of
@@ -10,14 +10,13 @@
 
 # master.banner.welcome #######################################################
 
-master.banner.background = #FFE97F 
+master.banner.background = #5CE1E6
 
 ﻿# master.welcome ##############################################################
 
 master.welcome.title = ¡Bienvenidos!
 master.welcome.text = \
-	Bienvenidos a Acme Stater!  Nunca antes ha sido tan sencillo desarrollar un \
-	proyecto y hacerlo funcionar.
+	Bienvenidos a Acme Planner! Tu segundo proyecto en DP
 
 # master.menu #################################################################
 
@@ -30,12 +29,22 @@ master.menu.sign-out = Salir
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
+master.menu.anonymous.favourite-link-alvaro = Enlace favorito de Sánchez
+master.menu.anonymous.favourite-link-lucia = Enlace favorito de Torres
+master.menu.anonymous.favourite-link-jesus = Enlace favorito de Roldan
+master.menu.anonymous.favourite-link-raul = Enlace favorito de Parrado
+master.menu.anonymous.favourite-link-servando = Enlace favorito de Figueroa
+master.menu.anonymous.favourite-link-maria = Enlace favorito de García
+master.menu.anonymous.listShout = Listado de Gritos
+master.menu.anonymous.createShout = Gritar!
+master.menu.anonymous.listTask = Listado de Tareas
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.spam = Spam
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shutdown = Parar el sistema
@@ -50,6 +59,14 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.createTask = Crear tarea
+master.menu.manager.listTask = Lista de tareas
+master.menu.manager.favourite-link = Enlace favorito
+master.menu.manager.showTask = Mostrar tarea
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -58,6 +75,15 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.become-manager = Hazte manager
+master.menu.user-account.manager = Datos de manager
+
+
+
+# master.menu.authenticated ##############################################################
+
+master.menu.authenticated =Autenticado
+master.menu.authenticated.listTask =Lista de tareas
 
 ﻿# master.footer ###############################################################
 
@@ -67,7 +93,7 @@ master.footer.label.license = Licencia
 master.footer.title.social = Social
 master.footer.label.linked-in = Linked-In
 master.footer.label.twitter = Twitter
-master.footer.title.languages = Lenguajes
+master.footer.title.languages = Lenguages
 master.footer.label.english = Inglés
 master.footer.label.spanish = Español
 
