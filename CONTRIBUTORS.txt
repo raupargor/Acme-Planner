@@ -1,6 +1,6 @@
 # NOTICE.txt
 #
-# Copyright (c) 2012-2021 Rafael Corchuelo.
+# Copyright (C) 2012-2021 Rafael Corchuelo.
 #
 # In keeping with the traditional purpose of furthering education and research, it is
 # the policy of the copyright owner to permit non-commercial use and redistribution of
@@ -8,13 +8,4 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-The contributors of this proyect are:
-
 - Rafael Corchuelo (corchu@us.es)
-- Raúl Parrado Gordón (raupargor@alum.us.es)
-- Jesús Roldán Cadena (jesrolcad@us.es)
-- Lucia Torres Gomez (luctorgom@alum.us.es)
-- Servando Figueroa Gómez (servandofg12@gmail.com) 
-- Álvaro Sánchez González (alsago68@gmail.com)
-- María García Cáceres (margarcac1@us.es)
-
