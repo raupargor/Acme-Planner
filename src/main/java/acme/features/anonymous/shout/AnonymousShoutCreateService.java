@@ -78,7 +78,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		final boolean spam= !this.spamService.filtroSpam(entity.getText(),this.thresholdRepository.findThreshold().getNumber());
+		final boolean spam = !this.spamService.filtroSpam(entity.getText(),this.thresholdRepository.findThreshold().getNumber());
 		errors.state(request, spam, "text","anonymous.shout.error.spam");
 	}
 
