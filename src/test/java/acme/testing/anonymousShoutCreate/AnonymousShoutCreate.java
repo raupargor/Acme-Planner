@@ -43,7 +43,7 @@ public class AnonymousShoutCreate extends AbstractTest {
 		super.fill(By.id("text"), text);
 		super.fill(By.id("info"), info);
 		super.submit(By.className("btn-primary"));
-		assert super.autoPausing; 
+		assert super.autoPausing;  
 		//assert super.baseUrl.equals(super.contextHome);
 	}
 	
