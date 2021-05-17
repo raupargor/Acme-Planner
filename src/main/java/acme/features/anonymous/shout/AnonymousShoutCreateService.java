@@ -80,7 +80,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert errors != null;
 		final boolean spam= !this.spamService.filtroSpam(entity.getText(),this.thresholdRepository.findThreshold().getNumber());
 		errors.state(request, spam, "text","anonymous.shout.error.spam");
-	}
+	} 
 
 	@Override
 	public void create(final Request<Shout> request, final Shout entity) {
