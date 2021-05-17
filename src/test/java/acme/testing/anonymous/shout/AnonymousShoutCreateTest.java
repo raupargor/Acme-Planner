@@ -1,30 +1,15 @@
-package acme.testing;
+package acme.testing.anonymous.shout;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.openqa.selenium.By;
 
-public class AnonymousShoutCreateTest extends AcmeTest {
+import acme.testing.AcmePlannerTest;
 
-	// Internal state ---------------------------------------------------------
+public class AnonymousShoutCreateTest extends AcmePlannerTest {
 
 	// Lifecycle management ---------------------------------------------------
-
-	@Override
-	@BeforeAll
-	public void beforeAll() { 
-		super.beforeAll();
-
-		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
-		super.setAutoPausing(true);
-
-		this.signIn("administrator", "administrator");
-		super.clickOnMenu("Administrator", "Populate DB (samples)");
-		this.signOut();
-	}
-
+	
 	// Test cases -------------------------------------------------------------
 
 	//Este test es de casos positivos, todos los Shouts cumplen los requisitos especificados,
@@ -59,19 +44,5 @@ public class AnonymousShoutCreateTest extends AcmeTest {
 	}
 
 	// Ancillary methods ------------------------------------------------------
-
-	protected void signIn(final String username, final String password) {
-		super.navigateHome();
-		super.clickOnLink("Sign in");
-		super.clickAndGo(By.linkText("Sign in"));
-		super.fillInputBoxIn("username", username);
-		super.fillInputBoxIn("password", password);
-		super.clickAndGo(By.id("remember$proxy"));
-		super.clickOnSubmitButton("Sign in");
-	}
-	protected void signOut() {
-		super.navigateHome();
-		super.clickOnLink("Sign out");
-	}
 
 }
