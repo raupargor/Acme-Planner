@@ -66,7 +66,7 @@
 		<bean id="shout08" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/04/23 19:34"/>
 		<property name="author" value="Mike Machine"/>
-		<property name="text" value="Everything has beauty, but not everyone sees it"/>
+		<property name="text" value="Everything has beauty but not everyone sees it"/>
 		<property name="info" value= "https://www.intentarlo.com/wp-content/uploads/2018/06/frases-en-ingl%C3%A9s.jpg"></property>
 	</bean>
 		<bean id="shout09" class="acme.entities.shouts.Shout">
@@ -78,7 +78,7 @@
 		<bean id="shout10" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/04/06 21:15"/>
 		<property name="author" value="Donald Mcfly"/>
-		<property name="text" value="If you can dream it, you can do it"/>
+		<property name="text" value="If you can dream it you can do it"/>
 		<property name="info" value="https://i.pinimg.com/originals/10/04/58/100458c1e22397fb55c081cc88232daa.jpg"></property>
 	</bean>
 	<!-- Tasks-->

@@ -59,11 +59,11 @@ public abstract class AcmePlannerTest extends AcmeTest {
 	}
 
 	protected void signUp(final String username, final String password, final String name, final String surname, final String email) {
-//		assert !StringHelper.isBlank(username);
-//		assert !StringHelper.isBlank(password);
-//		assert !StringHelper.isBlank(name);
-//		assert !StringHelper.isBlank(surname);
-//		assert !StringHelper.isBlank(email);
+		assert !StringHelper.isBlank(username);
+		assert !StringHelper.isBlank(password);
+		assert !StringHelper.isBlank(name);
+		assert !StringHelper.isBlank(surname);
+		assert !StringHelper.isBlank(email);
 
 		super.navigateHome();
 		super.clickOnMenu("Sign up", null);	

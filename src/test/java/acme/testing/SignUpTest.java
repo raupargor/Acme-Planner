@@ -22,6 +22,7 @@ public class SignUpTest extends AcmePlannerTest {
 
 	// Test cases -------------------------------------------------------------
 
+	//en este test probaremos el sign up de manera positiva, se espera que todos los registros se hagan correctamente
 	@ParameterizedTest
 	@CsvFileSource(resources = "/sign-up/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -31,6 +32,7 @@ public class SignUpTest extends AcmePlannerTest {
 		super.signOut();
 	}
 	
+	//en este test probaremos el sign up de manera negativa, se espera que todos los registros tengan errores en el formulario y salten por pantalla
 	@ParameterizedTest
 	@CsvFileSource(resources = "/sign-up/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
