@@ -1,0 +1,21 @@
+title,startMoment,endMoment,workload,status,description,link
+Create the entity Task for level C,2021-04-18 22:00:00,2021-04-20 16:00:00,"The entity Task must include: a title, an execution period, a description,and an optional link.",1.5,0,,255,0,250
+List public tasks that are non-finished for level C,2021-04-20 16:30:00,2021-04-22 08:00:00,List the public tasks that are non-finished (sorted by execution    period or work-load). Show the details of any public tasks that are non-finished.,2.5,0,,256,0,250
+List public tasks finished for level C,2021-04-20 16:30:00,2021-04-22 08:00:00,List the public tasks that are finished (sorted by execution period or workload).,2.5,1,,257,0,250
+Show the details for level C,2021-04-18 22:00:00,2021-04-30 08:00:00,An authenticated principal must be able to: Show the details of the public tasks that are finished,2.5,1,,258,0,254
+Create a dashboard for level C,2021-04-22 22:00:00,2021-04-30 15:00:00,"Information: num of task public/priv, num of finished/not finished task, etc",3.8,1,https://github.com/Servandofg12/DP2-June13/projects/1,259,0,250
+Change the color of the header buttons,2022-11-21 09:10:00,2023-04-30 15:00:00,Change the color of the header buttons when selected to red,20.5,1,https://github.com/Servandofg12/DP2-June13/projects/1,260,0,254
+Change the background color of the header menu,2021-12-21 16:10:00,2021-12-30 16:58:00,Change the background color of the header menu to light green,12.5,0,https://github.com/Servandofg12/DP2-June13/projects/1,261,0,250
+Change the message of the Welcome page,2020-11-21 09:10:00,2021-12-30 16:26:00,Change the message of the Welcome page to an image of a monkey,22.5,1,https://github.com/Servandofg12/DP2-June13/projects/1,262,0,250
+Create a technical report (in Spanish) that describes the history of the project,2022-01-21 03:10:00,2022-03-30 15:26:00,Create a technical report (in Spanish) that describes the history of the project after finishing with the previous tasks,32.13,0,,263,0,254
+Add delete support,2020-01-21 03:10:00,2022-03-30 15:26:00,Add delete support to all main domain objects ,45.3,0,,264,0,250
+Change the overall style of the website,2021-01-21 13:10:00,2021-11-30 16:46:00,"Change the overall style of the website, modifying the logos, fonts and colors of the pages. It should use brownish tones",85.4,0,,265,0,250
+Edit model.uxf and create Java class,2021-03-11 13:10:00,2021-12-12 16:26:00,Edit model.uxf and create Java class,15.5,1,,266,0,250
+Add your fav link,2021-01-21 17:10:00,2021-12-11 15:46:00,Add your favourite link to the menu. You must display an i18d message: Member's favourite link; and it must link your favourite web site.,10.1,1,,267,0,250
+Change the logo of the website,2021-01-21 13:10:00,2021-12-30 09:46:00,Change the logo of the website to your favourite photo,125.44,0,,268,0,254
+Add a new funcionallity,2021-04-11 12:00:00,2021-06-11 08:16:00,Add a new functionality that you consider important,15.5,0,,269,0,254
+Add your contact address,2021-01-21 17:00:00,2021-12-11 20:00:00,Add your contact address and delete your favourite link,46.6,0,,270,0,254
+Add a new link,2020-01-21 17:10:00,2020-12-11 15:46:00,Add a new link to the menu.,11.1,0,,271,0,254
+Change the logo of the website to a puppy photo,2019-01-21 13:00:00,2019-12-30 09:00:00,Change the logo of the website to a puppy photo,125.44,0,,272,0,250
+Delete shout funcionallity,2021-01-11 08:00:00,2021-02-11 11:00:00,Delete shout funcionallity ,24.0,0,,273,0,250
+Populate Data Base,2021-01-31 23:00:00,2021-02-27 23:00:00,Populate Data Base with new information,62.6,0,,274,0,254
