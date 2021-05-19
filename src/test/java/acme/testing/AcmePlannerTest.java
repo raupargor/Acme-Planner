@@ -25,6 +25,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
 	@Override
 	@BeforeAll
 	public void beforeAll() {
+		super.setHeadless(true);
 		super.beforeAll();
 
 

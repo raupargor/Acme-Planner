@@ -18,7 +18,7 @@ public class AdministratorThresholdShowTest  extends AcmePlannerTest {
 		
 		super.clickOnMenu("Administrator", "Spam");
 		
-		super.clickOnSubmitButton(AdministratorThresholdShowTest.Label);
+		super.clickOnReturnButton(AdministratorThresholdShowTest.Label);
 		
 		super.checkInputBoxHasValue("number", threshold);
 	
@@ -27,5 +27,6 @@ public class AdministratorThresholdShowTest  extends AcmePlannerTest {
 		super.signOut();
 
 	}
+	
 
 }
