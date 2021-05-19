@@ -1,3 +1,4 @@
+
 /*
  * AcmeJobsTest.java
  *
@@ -28,6 +29,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
         super.setHeadless(true); //esto se quita
 
 
+
 		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
 		super.setAutoPausing(false);
 		
@@ -38,7 +40,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		this.signOut();
 	}
 
-	// Business methods -------------------------------------------------------
+	// Business methods ----------------------------------------------------
 	
 	protected void signIn(final String username, final String password) {
 		assert !StringHelper.isBlank(username);
@@ -60,24 +62,29 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.checkSimplePath("/master/welcome");
 	}
 
-	protected void signUp(final String username, final String password, final String name, final String surname, final String email) {
+	protected void signUp(final String username,final String password,final String name,final String surname,final String email) {
+
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
 		assert !StringHelper.isBlank(name);
-		assert !StringHelper.isBlank(surname);
+		assert !StringHelper.isBlank(surname); 
 		assert !StringHelper.isBlank(email);
 
+		
 		super.navigateHome();
-		super.clickOnMenu("Sign up", null);	
+		super.clickOnMenu("Sign up", null);
+
 		super.fillInputBoxIn("username", username);
 		super.fillInputBoxIn("password", password);
 		super.fillInputBoxIn("confirmation", password);
 		super.fillInputBoxIn("identity.name", name);
 		super.fillInputBoxIn("identity.surname", surname);
 		super.fillInputBoxIn("identity.email", email);
+
 		super.fillInputBoxIn("accept", "true");
 		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/master/welcome");
+
 	}
 	
 	protected void signUpNegative(final String username, final String password, final String name, final String surname, final String email) {
