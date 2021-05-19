@@ -1,4 +1,4 @@
-package manager.task;
+package acme.testing.manager.task;
 
 
 public class ManagerTaskUpdateTest {
