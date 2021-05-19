@@ -25,6 +25,8 @@ public abstract class AcmePlannerTest extends AcmeTest {
 	@BeforeAll
 	public void beforeAll() {
 		super.beforeAll();
+        super.setHeadless(true); //esto se quita
+
 
 		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
 		super.setAutoPausing(false);
