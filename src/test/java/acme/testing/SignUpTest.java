@@ -23,7 +23,7 @@ public class SignUpTest extends AcmePlannerTest {
 	// Test cases -------------------------------------------------------------
 
 	//en este test probaremos el sign up de manera positiva, se espera que todos los registros se hagan correctamente
-	@ParameterizedTest
+	@ParameterizedTest 
 	@CsvFileSource(resources = "/sign-up/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveSignUp(final String username, final String password, final String name, final String surname, final String email) {
