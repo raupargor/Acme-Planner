@@ -26,7 +26,6 @@ public abstract class AcmeTest extends AbstractTest {
 
 	protected void checkLinkExists(final String label) {
 		assert !StringHelper.isBlank(label);
-
 		By locator;
 
 		locator = By.xpath(String.format("//a[normalize-space()='%s']", label));
@@ -35,9 +34,8 @@ public abstract class AcmeTest extends AbstractTest {
 
 	protected void checkButtonExists(final String label) {
 		assert !StringHelper.isBlank(label);
-
 		By locator;
-
+		
 		locator = By.xpath(String.format("//button[@type='submit' and normalize-space()='%s']", label));
 		assert super.exists(locator) : String.format("Cannot find button '%s'", label);
 	}
@@ -52,11 +50,15 @@ public abstract class AcmeTest extends AbstractTest {
 	}
 
 	protected void checkPanicExists() {
-		assert false;
+		By locator;
+		locator=By.xpath("//h1[normalize-space() = 'Unexpected error']");
+		assert super.exists(locator) : "Action didn't result in panic";
 	}
 
 	protected void checkNotPanicExists() {
-		assert false;
+		By locator;
+		locator=By.xpath("h1[normalize-space() = 'Unexpected error'");
+		assert !super.exists(locator) : "Action resulted in panic";
 	}
 
 	protected void checkErrorsExist() {
@@ -145,196 +147,196 @@ public abstract class AcmeTest extends AbstractTest {
 		assert contents.equals(value) : String.format("Expected value '%s' in input box '%s', but '%s' was found", expectedValue, name, value);
 	}
 
-	protected void checkColumnHasValue(final int recordIndex, final int attributeIndex, final String expectedValue) {
-		assert recordIndex >= 0;
-		assert attributeIndex >= 0;
-		// expectedValue is nullable
+		protected void checkColumnHasValue(final int recordIndex, final int attributeIndex, final String expectedValue) {
+			assert recordIndex >= 0;
+			assert attributeIndex >= 0;
+			// expectedValue is nullable
 
-		List<WebElement> row;
-		WebElement attribute, toggle;
-		String contents, value;
+			List<WebElement> row;
+			WebElement attribute, toggle;
+			String contents, value;
 
-		row = this.getListingRecord(recordIndex);
-		assert attributeIndex + 1 < row.size() : String.format("Attribute %d in record %d is out of range", attributeIndex, recordIndex);
-		attribute = row.get(attributeIndex + 1);
-		if (attribute.isDisplayed())
-			contents = attribute.getText();
-		else {
-			toggle = row.get(0);
-			toggle.click();
-			contents = (String) this.executor.executeScript("return arguments[0].innerText;", attribute);
-			toggle.click();
+			row = this.getListingRecord(recordIndex);
+			assert attributeIndex + 1 < row.size() : String.format("Attribute %d in record %d is out of range", attributeIndex, recordIndex);
+			attribute = row.get(attributeIndex + 1);
+			if (attribute.isDisplayed())
+				contents = attribute.getText();
+			else {
+				toggle = row.get(0);
+				toggle.click();
+				contents = (String) this.executor.executeScript("return arguments[0].innerText;", attribute);
+				toggle.click();
+			}
+
+			contents = (contents == null ? "" : contents.trim());
+			value = (expectedValue != null ? expectedValue.trim() : "");
+
+			assert contents.equals(value) : String.format("Expected value '%s' in attribute %d of record %d, but found '%s'", expectedValue, attributeIndex, recordIndex, value);
 		}
 
-		contents = (contents == null ? "" : contents.trim());
-		value = (expectedValue != null ? expectedValue.trim() : "");
+		// Form-filling methods ---------------------------------------------------
 
-		assert contents.equals(value) : String.format("Expected value '%s' in attribute %d of record %d, but found '%s'", expectedValue, attributeIndex, recordIndex, value);
-	}
+		protected void fillInputBoxIn(final String name, final String value) {
+			assert !StringHelper.isBlank(name);
+			// value is nullable
 
-	// Form-filling methods ---------------------------------------------------
+			By inputLocator, proxyLocator, optionLocator;
+			String inputTag, inputType, proxyXpath;
+			WebElement inputBox, inputProxy, option;
 
-	protected void fillInputBoxIn(final String name, final String value) {
-		assert !StringHelper.isBlank(name);
-		// value is nullable
-
-		By inputLocator, proxyLocator, optionLocator;
-		String inputTag, inputType, proxyXpath;
-		WebElement inputBox, inputProxy, option;
-
-		inputLocator = By.name(name);
-		inputBox = super.locateOne(inputLocator);
-		inputTag = inputBox.getTagName();
-		switch (inputTag) {
-		case "textarea":
-			super.fill(inputLocator, value);
-			break;
-		case "input":
-			inputType = inputBox.getAttribute("type");
-			switch (inputType) {
-			case "text":
-			case "password":
+			inputLocator = By.name(name);
+			inputBox = super.locateOne(inputLocator);
+			inputTag = inputBox.getTagName();
+			switch (inputTag) {
+			case "textarea":
 				super.fill(inputLocator, value);
 				break;
-			case "hidden":
-				proxyXpath = String.format("//input[@name='%s$proxy' and @type='checkbox']", name);
-				proxyLocator = By.xpath(proxyXpath);
-				assert value == null || value == "true" || value == "false" : String.format("Input box '%s' cannot be set to '%s'", name, value);
-				assert super.exists(proxyLocator) : String.format("Cannot find proxy for input box '%s'", name);
-				inputProxy = super.locateOne(proxyLocator);
-				if (inputProxy.getAttribute("checked") != null && (value == null || value == "false"))
-					inputProxy.click();
-				else if (inputProxy.getAttribute("checked") == null && value == "true")
-					inputProxy.click();
+			case "input":
+				inputType = inputBox.getAttribute("type");
+				switch (inputType) {
+				case "text":
+				case "password":
+					super.fill(inputLocator, value);
+					break;
+				case "hidden":
+					proxyXpath = String.format("//input[@name='%s$proxy' and @type='checkbox']", name);
+					proxyLocator = By.xpath(proxyXpath);
+					assert value == null || value == "true" || value == "false" : String.format("Input box '%s' cannot be set to '%s'", name, value);
+					assert super.exists(proxyLocator) : String.format("Cannot find proxy for input box '%s'", name);
+					inputProxy = super.locateOne(proxyLocator);
+					if (inputProxy.getAttribute("checked") != null && (value == null || value == "false"))
+						inputProxy.click();
+					else if (inputProxy.getAttribute("checked") == null && value == "true")
+						inputProxy.click();
+					break;
+				default:
+					assert false : String.format("Cannot fill input box '%s/%s' in", name, inputType);
+				}
+				break;
+			case "select":
+				optionLocator = By.xpath(String.format("//select[@name='%s']/option[@value='%s']", name, value == null ? "" : value));
+				assert super.exists(optionLocator) : "Cannot find option with requested value in select";
+				option = super.locateOne(optionLocator);
+				option.click();
 				break;
 			default:
-				assert false : String.format("Cannot fill input box '%s/%s' in", name, inputType);
+				assert false : String.format("Cannot fill input box '%s' in", name);
 			}
-			break;
-		case "select":
-			optionLocator = By.xpath(String.format("//select[@name='%s']/option[@value='%s']", name, value == null ? "" : value));
-			assert super.exists(optionLocator) : "Cannot find option with requested value in select";
-			option = super.locateOne(optionLocator);
-			option.click();
-			break;
-		default:
-			assert false : String.format("Cannot fill input box '%s' in", name);
-		}
-	}
-
-	// Click-related methods --------------------------------------------------
-
-	protected void clickOnMenu(final String header, final String option) {
-		assert !StringHelper.isBlank(header);
-		assert option == null || !StringHelper.isBlank(option);
-
-		By toggleLocator, headerLocator, optionLocator;
-		WebElement toggle;
-		String ariaExpanded;
-
-		try {
-			toggleLocator = By.xpath("//button[@class='navbar-toggler']");
-			toggle = super.locateOne(toggleLocator);
-			if (toggle.isDisplayed()) {
-				ariaExpanded = toggle.getAttribute("aria-expanded");
-				if (ariaExpanded == null)
-					super.clickAndGo(toggle);
-			}
-		} catch (final Throwable oops) {
-			// INFO: Can silently ignore the exception here.
-			// INFO+ Sometimes, the toggle get's unexpectedly stale.
 		}
 
-		headerLocator = By.xpath(String.format("//div[@id='mainMenu']/ul/li/a[normalize-space()='%s']", header));
-		if (option == null)
-			super.clickAndWait(headerLocator);
-		else {
+		// Click-related methods --------------------------------------------------
+
+		protected void clickOnMenu(final String header, final String option) {
+			assert !StringHelper.isBlank(header);
+			assert option == null || !StringHelper.isBlank(option);
+
+			By toggleLocator, headerLocator, optionLocator;
+			WebElement toggle;
+			String ariaExpanded;
+
 			try {
-				super.clickAndGo(headerLocator);
+				toggleLocator = By.xpath("//button[@class='navbar-toggler']");
+				toggle = super.locateOne(toggleLocator);
+				if (toggle.isDisplayed()) {
+					ariaExpanded = toggle.getAttribute("aria-expanded");
+					if (ariaExpanded == null)
+						super.clickAndGo(toggle);
+				}
 			} catch (final Throwable oops) {
 				// INFO: Can silently ignore the exception here.
-				// INFO+ Sometimes, the toggle get's unexpectedly stale
-				// INFO+ and that has an impact on the main menu.
-			} 
-			optionLocator = By.xpath(String.format("//div[@id='mainMenu']/ul/li[a[normalize-space()='%s']]/div[contains(@class, 'dropdown-menu')]/a[normalize-space()='%s']", header, option));
-			super.clickAndWait(optionLocator);
+				// INFO+ Sometimes, the toggle get's unexpectedly stale.
+			}
+
+			headerLocator = By.xpath(String.format("//div[@id='mainMenu']/ul/li/a[normalize-space()='%s']", header));
+			if (option == null)
+				super.clickAndWait(headerLocator);
+			else {
+				try {
+					super.clickAndGo(headerLocator);
+				} catch (final Throwable oops) {
+					// INFO: Can silently ignore the exception here.
+					// INFO+ Sometimes, the toggle get's unexpectedly stale
+					// INFO+ and that has an impact on the main menu.
+				} 
+				optionLocator = By.xpath(String.format("//div[@id='mainMenu']/ul/li[a[normalize-space()='%s']]/div[contains(@class, 'dropdown-menu')]/a[normalize-space()='%s']", header, option));
+				super.clickAndWait(optionLocator);
+			}
 		}
-	}
 
-	protected void clickOnLink(final String label) {
-		assert !StringHelper.isBlank(label);
+		protected void clickOnLink(final String label) {
+			assert !StringHelper.isBlank(label);
 
-		By locator;
+			By locator;
 
-		locator = By.xpath(String.format("//a[normalize-space()='%s']", label));
-		super.clickAndWait(locator);
-	}
+			locator = By.xpath(String.format("//a[normalize-space()='%s']", label));
+			super.clickAndWait(locator);
+		}
 
-	protected void clickOnListingRecord(final int recordIndex) {
-		assert recordIndex >= 0;
+		protected void clickOnListingRecord(final int recordIndex) {
+			assert recordIndex >= 0;
 
-		List<WebElement> record;
-		WebElement column;
+			List<WebElement> record;
+			WebElement column;
 
-		record = this.getListingRecord(recordIndex);
-		column = record.get(1);
-		super.clickAndWait(column);
-	}
+			record = this.getListingRecord(recordIndex);
+			column = record.get(1);
+			super.clickAndWait(column);
+		}
 
-	protected void clickOnSubmitButton(final String label) {
-		assert !StringHelper.isBlank(label);
+		protected void clickOnSubmitButton(final String label) {
+			assert !StringHelper.isBlank(label);
 
-		By locator;
+			By locator;
 
-		locator = By.xpath(String.format("//button[@type='submit' and normalize-space()='%s']", label));
-		super.clickAndWait(locator);
-	}
+			locator = By.xpath(String.format("//button[@type='submit' and normalize-space()='%s']", label));
+			super.clickAndWait(locator);
+		}
 
-	protected void clickOnReturnButton(final String label) {
-		assert !StringHelper.isBlank(label);
+		protected void clickOnReturnButton(final String label) {
+			assert !StringHelper.isBlank(label);
 
-		By locator;
+			By locator;
 
-		locator = By.xpath(String.format("//button[normalize-space()='%s']", label));
-		super.clickAndWait(locator);
-	}
+			locator = By.xpath(String.format("//button[normalize-space()='%s']", label));
+			super.clickAndWait(locator);
+		}
 
-	// Ancillary methods ------------------------------------------------------
+		// Ancillary methods ------------------------------------------------------
 
-	protected List<WebElement> getListingRecord(final int recordIndex) {
-		assert recordIndex >= 0;
+		protected List<WebElement> getListingRecord(final int recordIndex) {
+			assert recordIndex >= 0;
 
-		List<WebElement> result;
-		int pageIndex, rowIndex;
-		By listLocator, lengthLocator, paginatorLocator, pageLinkLocator, rowLocator, columnLocator;
-		WebElement list, lengthOption, paginator, pageLink, row;
-		List<WebElement> pageLinks, rows;
+			List<WebElement> result;
+			int pageIndex, rowIndex;
+			By listLocator, lengthLocator, paginatorLocator, pageLinkLocator, rowLocator, columnLocator;
+			WebElement list, lengthOption, paginator, pageLink, row;
+			List<WebElement> pageLinks, rows;
 
-		pageIndex = recordIndex / 5;
-		rowIndex = 1 + recordIndex % 5;
+			pageIndex = recordIndex / 5;
+			rowIndex = 1 + recordIndex % 5;
 
-		listLocator = By.id("list");
-		list = super.locateOne(listLocator);
-		lengthLocator = By.xpath("//select[@name='list_length']/option[@value='5']");
-		lengthOption = super.locateOne(lengthLocator);
-		super.clickAndGo(lengthOption);
+			listLocator = By.id("list");
+			list = super.locateOne(listLocator);
+			lengthLocator = By.xpath("//select[@name='list_length']/option[@value='5']");
+			lengthOption = super.locateOne(lengthLocator);
+			super.clickAndGo(lengthOption);
 
-		paginatorLocator = By.className("pagination");
-		paginator = super.locateOne(paginatorLocator);
-		pageLinkLocator = By.className("page-link");
-		pageLinks = paginator.findElements(pageLinkLocator);
-		assert pageIndex < pageLinks.size() : String.format("Record index %d is out of range", recordIndex);
-		pageLink = pageLinks.get(pageIndex);
-		super.clickAndGo(pageLink);
+			paginatorLocator = By.className("pagination");
+			paginator = super.locateOne(paginatorLocator);
+			pageLinkLocator = By.className("page-link");
+			pageLinks = paginator.findElements(pageLinkLocator);
+			assert pageIndex < pageLinks.size() : String.format("Record index %d is out of range", recordIndex);
+			pageLink = pageLinks.get(pageIndex);
+			super.clickAndGo(pageLink);
 
-		rowLocator = By.tagName("tr");
-		rows = list.findElements(rowLocator);
-		assert rowIndex < rows.size() : String.format("Record index %d is out of range", recordIndex);
-		row = rows.get(rowIndex);
-		columnLocator = By.tagName("td");
-		result = row.findElements(columnLocator);
+			rowLocator = By.tagName("tr");
+			rows = list.findElements(rowLocator);
+			assert rowIndex < rows.size() : String.format("Record index %d is out of range", recordIndex);
+			row = rows.get(rowIndex);
+			columnLocator = By.tagName("td");
+			result = row.findElements(columnLocator);
 
-		return result;
-	}
+			return result;
+		}
 
 }
