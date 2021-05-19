@@ -1,8 +1,9 @@
 package authenticated.task;
 
-import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.springframework.core.annotation.Order;
 
 import acme.testing.AcmePlannerTest;
 
@@ -18,7 +19,7 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 		@ParameterizedTest
 		@CsvFileSource(resources = "/listTaskAuthenticated/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
-		public void positiveAuthenticatedListTask(final int recordIndex, final String title, final String startMoment, final String endMoment,final String description ,final String workload,final String status,final String link) {
+		public void positiveAuthenticatedListAndShowTask(final int recordIndex, final String title, final String startMoment, final String endMoment,final String description ,final String workload,final String status,final String link) {
 			super.navigateHome();
 			
 			super.signIn("administrator", "administrator");
@@ -44,7 +45,19 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 			
 
 		}
+		
+		@Test
+		public void negativeAuthenticatedListTask() {
 
+			final String path="/authenticated/task/list";
+			final String query=super.getContextQuery();
+			
+			super.navigate(path, query);
+			
+			super.checkErrorsExist();
+			
+
+		}
 		// Ancillary methods ------------------------------------------------------
 
 }
