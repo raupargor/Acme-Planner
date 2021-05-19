@@ -62,7 +62,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
 		assert !StringHelper.isBlank(name);
-		assert !StringHelper.isBlank(surname);
+		assert !StringHelper.isBlank(surname); 
 		assert !StringHelper.isBlank(email);
 
 		super.navigateHome();
