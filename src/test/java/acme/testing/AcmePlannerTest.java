@@ -80,7 +80,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.fillInputBoxIn("identity.email", email);
 
 		super.fillInputBoxIn("accept", "true");
-		super.clickOnSubmitButton("Sign Up");
+		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/master/welcome");
 
 	}
