@@ -10,5 +10,5 @@
 
 administrator.spam.form.label.number = Maximum Spam Threshold
 
-administrator.spam.form.button.update = Update Threshold
+administrator.spam.form.button.update.threshold = Update Threshold
 administrator.spam.form.button.return = Return
