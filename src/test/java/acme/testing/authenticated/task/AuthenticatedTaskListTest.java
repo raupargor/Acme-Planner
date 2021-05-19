@@ -1,6 +1,7 @@
 package acme.testing.authenticated.task;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -42,7 +43,20 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 
 			super.signOut();
 			
+			}
+		
+			
+			//en este test probaremos el listado de Task, probaremos que no se muestra debido a que no estamos con la sesión iniciada
+			@Test
+			public void negativeAuthenticatedListTask() {
 
+				final String path="/authenticated/task/list";
+				final String query=super.getContextQuery();
+				
+				super.navigate(path, query);
+				
+				super.checkErrorsExist();
+				
 		}
 
 		// Ancillary methods ------------------------------------------------------
