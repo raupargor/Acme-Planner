@@ -1,4 +1,4 @@
-package authenticated.task;
+package acme.testing.authenticated.task;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
