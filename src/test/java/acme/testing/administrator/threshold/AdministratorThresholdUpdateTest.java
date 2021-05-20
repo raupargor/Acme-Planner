@@ -21,11 +21,9 @@ public class AdministratorThresholdUpdateTest extends AcmePlannerTest {
 		super.clickOnSubmitButton("Update Threshold");
 		
 		//Comprobamos que se haya updateado bien
-		super.clickOnMenu("Administrator", "Spam");
-		super.clickOnReturnButton(AdministratorThresholdShowTest.Label);
+		super.navigate("/administrator/spam/threshold/show",null);
 		super.checkInputBoxHasValue("number", threshold);
 		super.clickOnReturnButton("Return");
-		
 		super.signOut();
 
 	}

@@ -1,6 +1,7 @@
 package acme.testing.administrator.threshold;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -28,5 +29,14 @@ public class AdministratorThresholdShowTest  extends AcmePlannerTest {
 
 	}
 	
+	@Test
+	public void negativeShowThreshold() {
+		super.navigateHome();
+		
+		super.navigate("/administrator/spam/threshold/show",null);
+		
+		super.checkPanicExists();
+
+	}
 
 }
