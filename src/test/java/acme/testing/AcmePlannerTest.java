@@ -25,8 +25,9 @@ public abstract class AcmePlannerTest extends AcmeTest {
 	@Override
 	@BeforeAll
 	public void beforeAll() {
+        super.setHeadless(true); //true es para que no se abra firefox
+
 		super.beforeAll();
-        super.setHeadless(true); //esto se quita
 
 
 
