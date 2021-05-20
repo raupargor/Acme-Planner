@@ -25,7 +25,10 @@ public abstract class AcmePlannerTest extends AcmeTest {
 	@Override
 	@BeforeAll
 	public void beforeAll() {
+		super.setHeadless(true);
 		super.beforeAll();
+        super.setHeadless(true); //esto se quita
+
 
 
 		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
@@ -60,7 +63,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.checkSimplePath("/master/welcome");
 	}
 
-	protected void signUp(final String username,final String password,final String name,final String surname,final String email,final String phone) {
+	protected void signUp(final String username,final String password,final String name,final String surname,final String email) {
 
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
@@ -79,9 +82,8 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.fillInputBoxIn("identity.surname", surname);
 		super.fillInputBoxIn("identity.email", email);
 
-		super.fillInputBoxIn("identity.phone", phone);
 		super.fillInputBoxIn("accept", "true");
-		super.clickOnSubmitButton("Sign Up");
+		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/master/welcome");
 
 	}

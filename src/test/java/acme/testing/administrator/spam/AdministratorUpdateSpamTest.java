@@ -1,4 +1,4 @@
-package acme.administrator.spam;
+package acme.testing.administrator.spam;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
