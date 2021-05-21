@@ -1,5 +1,6 @@
 package acme.testing.administrator.userAccount;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.springframework.core.annotation.Order;
@@ -38,8 +39,17 @@ public class AdministratorUserAccountListShowTest extends AcmePlannerTest{
 				super.checkInputBoxHasValue("roles", roles);
 				super.checkInputBoxHasValue("status", status);
 				//El atributo newStatus sale para una user Account (la primera) y para las demás no. 
-				super.checkInputBoxHasValue("new status", newStatus);			
+				super.checkInputBoxHasValue("newStatus", newStatus);			
 				super.signOut();
+				
+			}
+			
+			//Caso negativo: Un usuario anónimo intenta acceder a las user accounts de un usuario administrador.  
+			@Test
+			public void negativeShowUserAccounts() {
+				super.navigate("/administrator/user-account/show", "id=251");
+	            
+	            super.checkErrorsExist();
 				
 			}
 

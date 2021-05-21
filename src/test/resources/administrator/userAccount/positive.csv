@@ -1,4 +1,4 @@
-recordIndex,username,name,surname,email,roles,status,newStatus
+recordIndex,username,identity.name,identity.surname,identity.email,rolelist,status,newStatus
 0,manager2,manager,Manager,manager2@acme.com,Manager,ENABLED, KEEP
 1,manager,manager,Manager,manager@acme.com,Manager Administrator Administrator Authenticated Authenticated,ENABLED,
 2,anonymous,John,Doe,john.doe@acme.com,Anonymous,DISABLED,
