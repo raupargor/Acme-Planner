@@ -26,48 +26,40 @@ public class AdministratorThresholdUpdateService implements AbstractUpdateServic
 
 		@Override
 		public boolean authorise(final Request<Threshold> request) {
-			assert request != null;
-
+			this.validateRequest(request);
 			return true;
 		}
 
 		@Override
 		public void bind(final Request<Threshold> request, final Threshold entity, final Errors errors) {
-			assert request != null;
-			assert entity != null;
-			assert errors != null;
-
+			this.validate(request,  entity, errors);
 			request.bind(entity, errors);
 		}
 
 		@Override
 		public void unbind(final Request<Threshold> request, final Threshold entity, final Model model) {
-			assert request != null;
+			this.validateRequest(request);
 			assert entity != null;
 			assert model != null;
-			
 			request.unbind(entity, model, "number");
 		}
 
 		@Override
 		public Threshold findOne(final Request<Threshold> request) {
-			assert request != null;
-			Threshold result;
-			result = this.repository.findThreshold();
-			
-			return result;
+			this.validateRequest(request);
+			return this.repository.findThreshold();
 		}
 		
 		@Override
 		public void validate(final Request<Threshold> request, final Threshold entity, final Errors errors) {
-			assert request != null;
+			this.validateRequest(request);
 			assert entity != null;
 			assert errors != null;	
 		}
 
 		@Override
 		public void update(final Request<Threshold> request, final Threshold entity) {
-			assert request != null;
+			this.validateRequest(request);
 			assert entity != null;
 
 			this.repository.save(entity);
@@ -75,12 +67,15 @@ public class AdministratorThresholdUpdateService implements AbstractUpdateServic
 		
 		@Override
 	    public void onSuccess(final Request<Threshold> request, final Response<Threshold> response) {
-	        assert request != null;
+			this.validateRequest(request);
 	        assert response != null;
 
 	        if (request.isMethod(HttpMethod.POST)) {
 	            PrincipalHelper.handleUpdate();
 	        }
 	    }
+		private void validateRequest(final Request<Threshold> request) {
+			assert request != null;
+		}
 
 }
