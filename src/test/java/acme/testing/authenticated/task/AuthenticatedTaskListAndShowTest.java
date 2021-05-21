@@ -1,12 +1,12 @@
-package authenticated.task;
+package acme.testing.authenticated.task;
 
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.springframework.core.annotation.Order;
 
 import acme.testing.AcmePlannerTest;
 
-public class AuthenticatedTaskListTest extends AcmePlannerTest {
+public class AuthenticatedTaskListAndShowTest extends AcmePlannerTest {
 
 	// Lifecycle management ---------------------------------------------------
 	
@@ -18,7 +18,7 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 		@ParameterizedTest
 		@CsvFileSource(resources = "/listTaskAuthenticated/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
-		public void positiveAuthenticatedListTask(final int recordIndex, final String title, final String startMoment, final String endMoment,final String description ,final String workload,final String status,final String link) {
+		public void positiveAuthenticatedListAndShowTask(final int recordIndex, final String title, final String startMoment, final String endMoment,final String description ,final String workload,final String status,final String link) {
 			super.navigateHome();
 			
 			super.signIn("administrator", "administrator");
@@ -42,7 +42,31 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 
 			super.signOut();
 			
+			}
+		
+			
+			//en este test probaremos el listado de Task, probaremos que no se muestra debido a que no estamos con la sesión iniciada
+			//tambien probamos que no muestra el contenido de ningún elemento del listado
+		@ParameterizedTest
+		@CsvFileSource(resources = "/listTaskAuthenticated/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+		@Order(10)
+			public void negativeAuthenticatedListandShowTask(final int recordIndex, final String title, final String startMoment, final String endMoment,final String description ,final String workload,final String status,final String link, final String id) {
+				super.signIn("administrator", "administrator");
+				super.signOut();
+				final String path="/authenticated/task/list";
+				final String query=null;
+				
+				super.navigate(path, query);
+				
+				super.checkErrorsExist();
+				super.checkPanicExists();
+				
+				final String query2="id="+id;
+				final String path2="/authenticated/task/list/show";
 
+				super.navigate(path2, query2);
+				
+				super.checkPanicExists();
 		}
 
 		// Ancillary methods ------------------------------------------------------
