@@ -1,5 +1,6 @@
 package acme.testing.anonymousTaskListShow;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -39,17 +40,14 @@ public class AnonymousTaskListShow extends AcmePlannerTest{
 			
 		}
 		
-//		//Caso negativo: Un usuario administrador intenta acceder a las tasks de un usuario anónimo.  
-//				@Test
-//				public void negativeListAndShowTask() {
-//					super.signIn("administrator", "administrator");
-//					final String path= super.getSimplePath();
-//		            final String query=super.getContextQuery();
-//		            
-//		            super.navigate(path, query);
-//		            
-//		            super.checkErrorsExist();
-//		            super.signOut();
-//					
-//				}
+		//Caso negativo: Un usuario administrador intenta acceder a las tasks de un usuario anónimo.  
+				@Test
+				public void negativeShowTask() {
+					super.signIn("administrator", "administrator");
+					super.navigate("/anonymous/task/show", "id=263");
+		            
+		            super.checkErrorsExist();
+		            super.signOut();
+					
+				}
 }
