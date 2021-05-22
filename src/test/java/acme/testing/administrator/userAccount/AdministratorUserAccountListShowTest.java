@@ -38,8 +38,8 @@ public class AdministratorUserAccountListShowTest extends AcmePlannerTest{
 				super.checkInputBoxHasValue("identity.email", email);
 				super.checkInputBoxHasValue("roleList", roles);
 				super.checkInputBoxHasValue("status", status);
-				//El atributo newStatus sale para una user Account (la primera) y para las demás no. 
-				//super.checkInputBoxHasValue("newStatus", newStatus);			
+				//El atributo newStatus sale para una user Account (la primera) y para las demás no.
+				if(newStatus!=null){ super.checkInputBoxHasValue("newStatus", newStatus); }	
 				super.signOut();
 				
 			}
