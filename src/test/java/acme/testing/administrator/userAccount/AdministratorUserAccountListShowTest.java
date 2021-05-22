@@ -33,13 +33,13 @@ public class AdministratorUserAccountListShowTest extends AcmePlannerTest{
 				super.clickOnListingRecord(recordIndex);
 				
 				super.checkInputBoxHasValue("username", username);
-				super.checkInputBoxHasValue("name", name);
-				super.checkInputBoxHasValue("surname", surname);
-				super.checkInputBoxHasValue("email", email);
-				super.checkInputBoxHasValue("roles", roles);
+				super.checkInputBoxHasValue("identity.name", name);
+				super.checkInputBoxHasValue("identity.surname", surname);
+				super.checkInputBoxHasValue("identity.email", email);
+				super.checkInputBoxHasValue("roleList", roles);
 				super.checkInputBoxHasValue("status", status);
 				//El atributo newStatus sale para una user Account (la primera) y para las demás no. 
-				super.checkInputBoxHasValue("newStatus", newStatus);			
+				//super.checkInputBoxHasValue("newStatus", newStatus);			
 				super.signOut();
 				
 			}
