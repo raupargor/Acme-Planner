@@ -15,7 +15,7 @@ public class ConsumerCreateTest extends AcmePlannerTest{
 				//POSIBLE PROBLEMA: introducir datos vacíos
 				
 				@ParameterizedTest
-				@CsvFileSource(resources = "/consumer/userAccount/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+				@CsvFileSource(resources = "/consumer/userAccount/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 				@Order(10)
 				public void positiveCreateConsumer(final String Company,final String Sector) {
 					super.navigateHome();
@@ -37,7 +37,7 @@ public class ConsumerCreateTest extends AcmePlannerTest{
 			//se espera que sea incorrecta la creación
 			//POSIBLE PROBLEMA: introducir datos vacíos
 			@ParameterizedTest
-			@CsvFileSource(resources = "/consumer/userAccount/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+			@CsvFileSource(resources = "/consumer/userAccount/createNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 			@Order(10)
 			public void negativeCreateConsumer(final String Company,final String Sector) {
 				super.navigateHome();
