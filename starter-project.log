@@ -3803,3 +3803,186 @@ WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: At
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#16]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#27]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#38]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#49]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#60]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#71]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#82]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#93]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#104]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#115]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#126]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#137]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#148]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#159]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#170]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#181]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#192]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#203]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#214]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#225]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#16]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#27]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#38]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#49]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#60]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#71]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#82]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#93]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#104]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#115]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#126]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#137]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#148]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#159]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#170]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#181]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#192]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#203]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#214]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+WARN [org.hibernate.action.internal.UnresolvedEntityInsertActions] HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([acme.entities.roles.Manager#0])
+	Dependent entities: ([[acme.entities.tasks.Task#225]])
+	Non-nullable association(s): ([acme.entities.tasks.Task.manager])
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
