@@ -47,8 +47,8 @@ public class AdministratorUserAccountListShowTest extends AcmePlannerTest{
 			
 			/*Caso negativo: Un usuario anónimo intenta acceder a una cuenta de usuario (show)
 			 * del listado de cuentas de usuario de un administrador. 
-			 * Se va a violar la siguiente restricción: Un usuario debe ser 
-			 * administrador para acceder a los datos de la cuenta de usuario.
+			 * Se va a violar la siguiente restricción: Un usuario debe ser  administrador para 
+			 * acceder a los datos de la cuenta de usuario.
 			 * Resultado esperado: Debe producirse un error debido a que 
 			 * un usuario anónimo no puede acceder a una cuenta de usuario
 			 * de un usuario administrador. */ 
