@@ -40,6 +40,6 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest {
 		super.signIn("manager2", "manager2");
 		super.navigate("/manager/task/show", "id=" + id);
 		super.checkPanicExists();
-
+ 
 	}
 }
