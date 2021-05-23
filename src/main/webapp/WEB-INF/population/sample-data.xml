@@ -451,5 +451,45 @@
 		<property name="company" value="ETSII"/>
 		<property name="sector" value="Educational"/>
 	</bean>
-  
+  <bean name="authenticatedUserAccount" class="acme.framework.entities.UserAccount">
+        <property name="username" value="authenticated" />
+        <property name="password" value="authenticated" />
+        <property name="enabled" value="true" />
+        <property name="identity">
+            <bean class="acme.datatypes.UserIdentity">
+                <property name="name" value="authenticated" />
+                <property name="surname" value="authenticated" />
+                <property name="email" value="authenticated@acme.com" />
+            </bean>
+        </property>
+        <property name="roles">
+            <list>
+                <ref bean="authenticatedAuthenticated" />
+            </list>
+        </property>
+    </bean>
+    <bean name="authenticatedAuthenticated" class="acme.framework.entities.Authenticated">
+        <property name="userAccount" ref="authenticatedUserAccount" />
+    </bean>
+    
+    <bean name="authenticatedUserAccount2" class="acme.framework.entities.UserAccount">
+        <property name="username" value="authenticated2" />
+        <property name="password" value="authenticated2" />
+        <property name="enabled" value="true" />
+        <property name="identity">
+            <bean class="acme.datatypes.UserIdentity">
+                <property name="name" value="authenticated2" />
+                <property name="surname" value="authenticated2" />
+                <property name="email" value="authenticated2@acme.com" />
+            </bean>
+        </property>
+        <property name="roles">
+            <list>
+                <ref bean="authenticatedAuthenticated2" />
+            </list>
+        </property>
+    </bean>
+    <bean name="authenticatedAuthenticated2" class="acme.framework.entities.Authenticated">
+        <property name="userAccount" ref="authenticatedUserAccount2" />
+    </bean>
 </beans>
