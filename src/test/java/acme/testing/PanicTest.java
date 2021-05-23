@@ -12,7 +12,7 @@ public class PanicTest extends AcmePlannerTest{
 		//en este test probaremos la navegación a la vista de Panic
 		//se espera que sea correcta en el caso positivo e incorrecta en el negativo
 		//POSIBLE PROBLEMA: el nombre de las vistas puede cambiar
-		
+		 
 		@Test
 		@Order(10)
 		public void positivePanic() {
