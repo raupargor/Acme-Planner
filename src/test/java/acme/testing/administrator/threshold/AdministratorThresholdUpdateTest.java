@@ -8,8 +8,10 @@ import acme.testing.AcmePlannerTest;
 
 public class AdministratorThresholdUpdateTest extends AcmePlannerTest {
 	
+	//Test de la feature administrator/threshold/update positivo, se espera que el administrador
+	//pueda updatear el valor del threshold sin problema
 	@ParameterizedTest
-	@CsvFileSource(resources = "/updateThreshold/positive2.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/administrator/Threshold/updatePositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveUpdateThreshold(final String threshold) {
 		
@@ -28,8 +30,10 @@ public class AdministratorThresholdUpdateTest extends AcmePlannerTest {
 
 	}
 	
+	//Test de la feature administrator/threshold/update negativo,
+	//se probaran las restricciones: 0, caracteres, numero negativo, numero entero
 	@ParameterizedTest
-	@CsvFileSource(resources = "/updateThreshold/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/administrator/Threshold/updateNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void negativeUpdateThreshold(final String threshold) {
 		

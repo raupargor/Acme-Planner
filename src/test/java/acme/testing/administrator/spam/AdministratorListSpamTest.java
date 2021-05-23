@@ -9,7 +9,8 @@ import acme.testing.AcmePlannerTest;
 public class AdministratorListSpamTest extends AcmePlannerTest{
 
 	
-	
+	//Test de la feature administrator/spam/list positivo, se espera que un administrador
+	//no tenga problemas en acceder al listado de palabras spam
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spam/listPositive.csv", encoding="utf-8", numLinesToSkip=1)
 	@Order(10)

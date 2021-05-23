@@ -12,11 +12,11 @@ public class AnonymousShoutListTest extends AcmePlannerTest {
 	
 		// Test cases -------------------------------------------------------------
 
-		//en este test probaremos el listado de Shout, no hay posibilidad de show, por lo que solo probaremos que se muestra en el orden correspondiente
+		//en este test probaremos el listado de Shout de la feature anonymous/shout/list , no hay posibilidad de show, por lo que solo probaremos que se muestra en el orden correspondiente
 		//se espera que sea correcto el orden de los Shout
 		//POSIBLE PROBLEMA: con el tiempo el orden se puede ver cambiado dado que se muestran los Shout de menos de 1 mes
 		@ParameterizedTest
-		@CsvFileSource(resources = "/listShout/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+		@CsvFileSource(resources = "/anonymous/Shout/listPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
 		public void positiveListShout(final int recordIndex, final String moment, final String author, final String text, final String info) {
 			super.navigateHome();

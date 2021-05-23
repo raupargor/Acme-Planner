@@ -1,4 +1,4 @@
-package acme.testing.provider;
+package acme.testing.provider.userAccount;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -8,8 +8,9 @@ import acme.testing.AcmePlannerTest;
 
 public class ProviderUpdateTest extends AcmePlannerTest{
 	
+	//Test de update consumer, se espera que un consumer pueda actualizar sus datos
 	@ParameterizedTest
-	@CsvFileSource(resources = "/updateConsumerAndProvider/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/provider/userAccount/updatePositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveUpdateProvider(final String Company,final String Sector) {
 		super.navigateHome();
@@ -31,8 +32,12 @@ public class ProviderUpdateTest extends AcmePlannerTest{
 
 	}
 	
+	//Test de update consumer, se espera que un consumer no pueda actualizar sus datos
+	//se prueba que las restricciones funcionen:
+	//company no blanco
+	//sector no blanco
 	@ParameterizedTest
-	@CsvFileSource(resources = "/updateConsumerAndProvider/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/provider/userAccount/updateNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void negativeUpdateProvider(final String Company,final String Sector) {
 		super.navigateHome();

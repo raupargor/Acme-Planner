@@ -1,4 +1,4 @@
-package acme.testing.provider;
+package acme.testing.provider.userAccount;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -17,7 +17,7 @@ public class ProviderCreateTest extends AcmePlannerTest{
 				//POSIBLE PROBLEMA: introducir datos vacíos
 				
 				@ParameterizedTest
-				@CsvFileSource(resources = "/listCreateConsumerAndProvider/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+				@CsvFileSource(resources = "/provider/userAccount/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 				@Order(20)
 				public void positiveCreateProvider(final String Company,final String Sector) {
 					super.navigateHome();
@@ -39,7 +39,7 @@ public class ProviderCreateTest extends AcmePlannerTest{
 				//se espera que sea incorrecta la creación
 				//POSIBLE PROBLEMA: introducir datos vacíos
 				@ParameterizedTest
-				@CsvFileSource(resources = "/listCreateConsumerAndProvider/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+				@CsvFileSource(resources = "/provider/userAccount/createNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 				@Order(10)
 				public void negativeCreateProvider(final String Company,final String Sector) {
 					super.navigateHome();

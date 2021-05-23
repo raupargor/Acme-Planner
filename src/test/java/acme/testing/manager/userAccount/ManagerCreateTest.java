@@ -1,4 +1,4 @@
-package acme.testing.manager;
+package acme.testing.manager.userAccount;
 
 import org.junit.jupiter.api.Test;
 
