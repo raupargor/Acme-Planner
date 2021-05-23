@@ -15,10 +15,11 @@ public class AdministratorUserAccountListShowTest extends AcmePlannerTest{
 
 			// Test cases -------------------------------------------------------------
 
-			/*Caso positivo: Un usuario administrador lista las cuentas de usuario
-			 *  y accede a cada una de ellas sin problema.*/ 
+			/*Caso positivo: Un usuario administrador lista las cuentas de usuario (list)
+			 *  y accede a los datos de cada una de ellas (show).
+			 *  Resultado esperado: Éxito a la hora de realizar las acciones.*/ 
 			@ParameterizedTest
-			@CsvFileSource(resources = "/administrator/userAccount/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+			@CsvFileSource(resources = "/administrator/userAccount/listshow-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 			@Order(10)
 			public void positiveListAndShowUserAccount(final int recordIndex, final String username, final String name, 
 				final String surname, final String email, final String roles, final String status, final String newStatus) {
@@ -44,7 +45,13 @@ public class AdministratorUserAccountListShowTest extends AcmePlannerTest{
 				
 			}
 			
-			//Caso negativo: Un usuario anónimo intenta acceder a las user accounts de un usuario administrador.  
+			/*Caso negativo: Un usuario anónimo intenta acceder a una cuenta de usuario (show)
+			 * del listado de cuentas de usuario de un administrador. 
+			 * Se va a violar la siguiente restricción: Un usuario debe ser 
+			 * administrador para acceder a los datos de la cuenta de usuario.
+			 * Resultado esperado: Debe producirse un error debido a que 
+			 * un usuario anónimo no puede acceder a una cuenta de usuario
+			 * de un usuario administrador. */ 
 			@Test
 			public void negativeShowUserAccounts() {
 				super.navigate("/administrator/user-account/show", "id=251");
