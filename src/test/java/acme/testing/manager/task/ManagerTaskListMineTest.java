@@ -8,7 +8,7 @@ import acme.testing.AcmePlannerTest;
 
 public class ManagerTaskListMineTest  extends AcmePlannerTest {
 	
-	
+	//Test de la lista de tasks de un Manager. Se espera que cada columna tenga el valor asignado en /listTask/positive.csv
 	@ParameterizedTest
 	@CsvFileSource(resources = "/listTask/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
