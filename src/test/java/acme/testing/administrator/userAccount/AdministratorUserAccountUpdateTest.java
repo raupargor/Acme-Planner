@@ -24,13 +24,15 @@ public class AdministratorUserAccountUpdateTest extends AcmePlannerTest{
 		if(newStatus!=null) {
 		super.fillInputBoxIn("newStatus", newStatus);
 		super.clickOnSubmitButton("Update");
+		super.clickOnListingRecord(recordIndex);
+		super.checkInputBoxHasValue("status", newStatus);
 		}
 		
 		super.signOut();
 
 	}
 	
-	/*Caso positivo: Un usuario administrador actualiza los datos de las cuentas de usuario (update)
+	/*Caso negativo: Un usuario administrador actualiza los datos de las cuentas de usuario (update)
 	 *  Resultado esperado:  Debe producirse un error debido a que 
 	 *  se ha introducido mal el campo "new status". Concretamente, se ha dejado vacío.*/ 
 	@ParameterizedTest
