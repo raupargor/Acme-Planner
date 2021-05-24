@@ -1,7 +1,6 @@
 package acme.testing.administrator.spam;
 
 import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -11,7 +10,8 @@ public class AdministratorUpdateSpamTest extends AcmePlannerTest{
 
 	//Test de la feature administrator/spam/update negativo, se espera que un administrador
 	//pueda updatear los valores de las palabras spam con valores vacíos.
-	@Test
+	@ParameterizedTest
+	@CsvFileSource(resources = "/administrator/spam/updatePositive.csv", encoding="utf-8", numLinesToSkip=1)
 	@Order(10)
 	public void updateFailure(final int recordIndex, final String spamWords) {
 		
