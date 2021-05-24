@@ -31,6 +31,12 @@ public class AuthenticatedUserAccountUpdateTest extends AcmePlannerTest{
 						super.fillInputBoxIn("identity.email", Email);
 
 						super.clickOnSubmitButton("Update");
+						super.checkNotPanicExists();
+
+						super.clickOnMenu("Account", "General data");
+						super.checkInputBoxHasValue("identity.name", Name);
+						super.checkInputBoxHasValue("identity.surname", Surname);
+						super.checkInputBoxHasValue("identity.email", Email);
 						
 						super.signOut();
 				
