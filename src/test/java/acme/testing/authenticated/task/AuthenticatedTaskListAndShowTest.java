@@ -16,7 +16,7 @@ public class AuthenticatedTaskListAndShowTest extends AcmePlannerTest {
 		//se espera que sea correcto el orden de las Task
 		//POSIBLE PROBLEMA: con el tiempo el contenido se puede ver cambiado dado que se muestran las Task del populate Sample actual
 		@ParameterizedTest
-		@CsvFileSource(resources = "/listTaskAuthenticated/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+		@CsvFileSource(resources = "/authenticated/Task/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
 		public void positiveAuthenticatedListAndShowTask(final int recordIndex, final String title, final String startMoment, final String endMoment,final String description ,final String workload,final String status,final String link) {
 			super.navigateHome();
@@ -48,7 +48,7 @@ public class AuthenticatedTaskListAndShowTest extends AcmePlannerTest {
 			//en este test probaremos el listado de Task, probaremos que no se muestra debido a que no estamos con la sesión iniciada
 			//tambien probamos que no muestra el contenido de ningún elemento del listado
 		@ParameterizedTest
-		@CsvFileSource(resources = "/listTaskAuthenticated/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+		@CsvFileSource(resources = "/authenticated/Task/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(10)
 			public void negativeAuthenticatedListandShowTask(final int recordIndex, final String title, final String startMoment, final String endMoment,final String description ,final String workload,final String status,final String link, final String id) {
 				super.signIn("administrator", "administrator");

@@ -7,7 +7,7 @@
 	<acme:message code="administrator.dashboard.form.title.general-indicators"/>
 </h2>
 
-<table class="table table-sm">
+<table class="table table-sm" id="general_indicators">
 	<caption>
 		<acme:message code="administrator.dashboard.form.title.general-indicators"/>
 	</caption>	
@@ -48,7 +48,7 @@
 	<acme:message code="administrator.dashboard.form.title.workload-statistics"/>
 </h2>
 
-<table class="table table-sm">
+<table class="table table-sm" id="workload-statistics">
 	<caption>
 		<acme:message code="administrator.dashboard.form.title.workload-statistics"/>
 	</caption>	
@@ -89,7 +89,7 @@
 	<acme:message code="administrator.dashboard.form.title.execution-period-statistics"/>
 </h2>
 
-<table class="table table-sm">
+<table class="table table-sm" id="execution-period-statistics">
 	<caption>
 		<acme:message code="administrator.dashboard.form.title.execution-period-statistics"/>
 	</caption>	

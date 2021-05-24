@@ -382,5 +382,114 @@
 	<bean name="administratorManager2" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="managerUserAccount2" />
 	</bean>
-  
+	
+	<bean name="consumerUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="consumer" />
+		<property name="password" value="consumer" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="consumer" />
+				<property name="surname" value="Consumer" />
+				<property name="email" value="consumer@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="consumerAdministrator" />
+				<ref bean="consumerAuthenticated" />
+				<ref bean="consumerConsumer" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="consumerAdministrator" class="acme.framework.entities.Administrator">
+		<property name="userAccount" ref="consumerUserAccount" />
+	</bean>
+	
+	<bean name="consumerAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="consumerUserAccount" />
+	</bean>
+	
+	<bean name="consumerConsumer" class="acme.entities.roles.Consumer">
+		<property name="userAccount" ref="consumerUserAccount" />
+		<property name="company" value="ETSII"/>
+		<property name="sector" value="Educational"/>
+	</bean>
+	
+	<bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="provider" />
+		<property name="password" value="provider" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="provider" />
+				<property name="surname" value="Provider" />
+				<property name="email" value="provider@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="providerAdministrator" />
+				<ref bean="providerAuthenticated" />
+				<ref bean="providerProvider" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="providerAdministrator" class="acme.framework.entities.Administrator">
+		<property name="userAccount" ref="providerUserAccount" />
+	</bean>
+	
+	<bean name="providerAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="providerUserAccount" />
+	</bean>
+	
+	
+	<bean name="providerProvider" class="acme.entities.roles.Provider">
+		<property name="userAccount" ref="providerUserAccount" />
+		<property name="company" value="ETSII"/>
+		<property name="sector" value="Educational"/>
+	</bean>
+  <bean name="authenticatedUserAccount" class="acme.framework.entities.UserAccount">
+        <property name="username" value="authenticated" />
+        <property name="password" value="authenticated" />
+        <property name="enabled" value="true" />
+        <property name="identity">
+            <bean class="acme.datatypes.UserIdentity">
+                <property name="name" value="authenticated" />
+                <property name="surname" value="authenticated" />
+                <property name="email" value="authenticated@acme.com" />
+            </bean>
+        </property>
+        <property name="roles">
+            <list>
+                <ref bean="authenticatedAuthenticated" />
+            </list>
+        </property>
+    </bean>
+    <bean name="authenticatedAuthenticated" class="acme.framework.entities.Authenticated">
+        <property name="userAccount" ref="authenticatedUserAccount" />
+    </bean>
+    
+    <bean name="authenticatedUserAccount2" class="acme.framework.entities.UserAccount">
+        <property name="username" value="authenticated2" />
+        <property name="password" value="authenticated2" />
+        <property name="enabled" value="true" />
+        <property name="identity">
+            <bean class="acme.datatypes.UserIdentity">
+                <property name="name" value="authenticated2" />
+                <property name="surname" value="authenticated2" />
+                <property name="email" value="authenticated2@acme.com" />
+            </bean>
+        </property>
+        <property name="roles">
+            <list>
+                <ref bean="authenticatedAuthenticated2" />
+            </list>
+        </property>
+    </bean>
+    <bean name="authenticatedAuthenticated2" class="acme.framework.entities.Authenticated">
+        <property name="userAccount" ref="authenticatedUserAccount2" />
+    </bean>
 </beans>

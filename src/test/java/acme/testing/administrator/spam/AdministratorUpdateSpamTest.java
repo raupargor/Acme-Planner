@@ -8,8 +8,10 @@ import acme.testing.AcmePlannerTest;
 
 public class AdministratorUpdateSpamTest extends AcmePlannerTest{
 
+	//Test de la feature administrator/spam/update negativo, se espera que un administrador
+	//pueda updatear los valores de las palabras spam con valores vacíos.
 	@ParameterizedTest
-	@CsvFileSource(resources = "/administrator/spam/updateFailure.csv", encoding="utf-8", numLinesToSkip=1)
+	@CsvFileSource(resources = "/administrator/spam/updatePositive.csv", encoding="utf-8", numLinesToSkip=1)
 	@Order(10)
 	public void updateFailure(final int recordIndex, final String spamWords) {
 		
@@ -24,6 +26,8 @@ public class AdministratorUpdateSpamTest extends AcmePlannerTest{
 		super.signOut();
 	}
 	
+	//Test de la feature administrator/spam/update positivo, se espera que un administrador
+		//pueda updatear los valores de las palabras spam
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spam/updatePositive.csv", encoding="utf-8", numLinesToSkip=1)
 	@Order(20)

@@ -1,4 +1,4 @@
-package acme.testing.anonymousTaskListShow;
+package acme.testing.anonymous.task;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -6,17 +6,17 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-public class AnonymousTaskListShow extends AcmePlannerTest{
+public class AnonymousTaskListShowTest extends AcmePlannerTest{
 	
 	// Internal state ---------------------------------------------------------
 
 		// Lifecycle management ---------------------------------------------------
-
+ 
 		// Test cases -------------------------------------------------------------
 
 		//Caso positivo: Un usuario anónimo lista las tasks y accede a una de ellas sin ningún problema. 
 		@ParameterizedTest
-		@CsvFileSource(resources = "/ListShowTask/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+		@CsvFileSource(resources = "/anonymous/Task/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 		public void positiveListAndShowTask(final int recordIndex, final String title, final String startMoment, 
 			final String endMoment, final String workload, final String status, final String description,
 			final String link) {
