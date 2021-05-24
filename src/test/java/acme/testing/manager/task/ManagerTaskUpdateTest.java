@@ -28,6 +28,8 @@ public class ManagerTaskUpdateTest   extends AcmePlannerTest  {
 		super.fillInputBoxIn("link", link);
 		
 		super.clickOnSubmitButton("Update Task");
+		
+		super.checkSimplePath("/manager/task/list");
 
 	}
 	
