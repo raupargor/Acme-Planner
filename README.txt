@@ -15,4 +15,4 @@ projects.
 
 Enlace de GitHub: https://github.com/raupargor/Acme-Work-Plans/
 
-Enlace a la release: https://github.com/raupargor/Acme-Work-Plans/releases/tag/2.1
+Enlace a la release: https://github.com/raupargor/Acme-Work-Plans/releases/tag/2.2
