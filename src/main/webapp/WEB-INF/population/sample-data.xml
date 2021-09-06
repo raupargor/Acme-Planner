@@ -185,7 +185,7 @@
 	</bean>
 	<bean id="task11" class="acme.entities.tasks.Task">
 		<property name="title" value="Change the overall style of the website"/>
-		<property name="startMoment" value= "2021/07/21 14:10"/>
+		<property name="startMoment" value= "2021/06/21 14:10"/>
 		<property name="endMoment" value="2021/06/30 17:46"/>
 		<property name="description" value="Change the overall style of the website, modifying the logos, fonts and colors of the pages. It should use brownish tones"/>
 		<property name="workload" value="85.4"/>
@@ -235,7 +235,7 @@
 	</bean>
 	<bean id="task16" class="acme.entities.tasks.Task">
 		<property name="title" value="Add your contact address"/>
-		<property name="startMoment" value= "2021/01/21 18:0"/>
+		<property name="startMoment" value= "2021/01/21 18:00"/>
 		<property name="endMoment" value="2022/12/11 21:00"/>
 		<property name="description" value="Add your contact address and delete your favourite link"/>
 		<property name="workload" value="46.5"/>
@@ -275,7 +275,7 @@
 	</bean>
 	<bean id="task20" class="acme.entities.tasks.Task">
 		<property name="title" value="Populate Data Base"/>
-		<property name="startMoment" value= "2021/02/01 00:0"/>
+		<property name="startMoment" value= "2021/02/01 00:00"/>
 		<property name="endMoment" value="2021/02/28 00:00"/>
 		<property name="description" value="Populate Data Base with new information"/>
 		<property name="workload" value="62.3"/>
