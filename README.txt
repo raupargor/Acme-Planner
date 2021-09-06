@@ -12,3 +12,7 @@ This is the Starter Project, which is intended to be a core learning asset for t
 who have enroled the Design and Testing subject of the Software Engineering curriculum of the 
 University of Sevilla.  This project helps them start working on their new information system 
 projects.
+
+Enlace de GitHub: https://github.com/raupargor/Acme-Work-Plans/
+
+Enlace a la release: https://github.com/raupargor/Acme-Work-Plans/releases/tag/2.0
