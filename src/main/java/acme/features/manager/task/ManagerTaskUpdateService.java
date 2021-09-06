@@ -1,5 +1,6 @@
 package acme.features.manager.task;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
@@ -114,16 +115,20 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		}
 		//Validacion workload
 		final Double workload = entity.getWorkload();
+		final BigDecimal bd = new BigDecimal(String.valueOf(workload));
+		final BigDecimal fPart = bd.remainder(BigDecimal.ONE);
+		final BigDecimal minutosMax = new BigDecimal(String.valueOf(0.59));
 		final Integer workloadInt = workload.intValue();
-		final Double workloadDouble = workload - workloadInt;
+		//final Integer workloadDouble = (int) (workload%1.*100);
 		final Boolean workloadCorrecto;
 		if(workload == null || endMoment == null || startMoment == null) {
 			
 		}else if(workload <= 0.0){
 			errors.state(request, false, "workload","manager.task.error.workloadNegative");
-	} else if(workload > 99.59) {
+	} 
+			else if(workload > 99.59) {
 			errors.state(request, false, "workload","manager.task.error.workloadMax");
-	} else if(workloadDouble >0.59) {
+	} else if(fPart.compareTo(minutosMax) == 1) {
 		errors.state(request, false, "workload","manager.task.error.workloadMaxMinutes");
 	} else if(workloadInt > 99) {
 		errors.state(request, false, "workload","manager.task.error.workloadMaxHours");
